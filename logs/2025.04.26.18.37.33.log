@@ -1,0 +1,34 @@
+18:37:33.920 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+18:37:33.946 No peerConnectionConfig
+18:37:33.986 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+18:37:33.996 WebSocket listening for Streamer connections on :8888
+18:37:33.996 WebSocket listening for SFU connections on :8889
+18:37:33.997 WebSocket listening for Players connections on :80
+18:37:33.999 Http listening on *: 80
+18:37:34.001 Frontend server not running, unable to setup game session
+18:37:38.821 player 1 (::1) connected
+18:37:38.823 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+18:37:38.823 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:37:38.824 Frontend server not running, unable to setup game session
+18:37:38.883 [37m1 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 5296368336064514488 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:37:38.883 Player 1 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!

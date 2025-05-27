@@ -1,0 +1,44 @@
+00:57:31.472 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+00:57:31.504 No peerConnectionConfig
+00:57:31.558 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+00:57:31.569 WebSocket listening for Streamer connections on :8888
+00:57:31.571 WebSocket listening for SFU connections on :8889
+00:57:31.572 WebSocket listening for Players connections on :80
+00:57:31.574 Http listening on *: 80
+00:57:31.577 Frontend server not running, unable to setup game session
+00:57:56.044 Streamer connected: ::1
+00:57:56.045 [37m::1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+00:57:56.046 [37m::1 <-[32m {"type":"identify"}
+00:57:59.788 [37m::1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+00:57:59.789 Registered new streamer: DefaultStreamer
+00:59:28.883 Streamer connected: ::ffff:127.0.0.1
+00:59:28.883 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+00:59:28.885 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+00:59:28.907 [37m-> ::ffff:127.0.0.1[34m: {"type":"identify","id":"Player"}
+00:59:28.909 unsupported Streamer message type: identify
+00:59:28.930 streamer ::ffff:127.0.0.1 disconnected: 1008 - Unsupported message type
+00:59:49.793 [37mDefaultStreamer ->[34m {"type":"ping","time":1737147589}
+01:01:25.254 [37mDefaultStreamer ->[34m {"type":"ping","time":1737147684}
+01:02:40.674 [37mDefaultStreamer ->[34m {"type":"ping","time":1737147760}
+01:04:20.132 [37mDefaultStreamer ->[34m {"type":"ping","time":1737147860}
+01:05:32.223 [37mDefaultStreamer ->[34m {"type":"ping","time":1737147932}

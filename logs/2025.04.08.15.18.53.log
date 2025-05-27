@@ -1,0 +1,88 @@
+15:18:53.915 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+15:18:53.939 No peerConnectionConfig
+15:18:53.975 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+15:18:53.982 WebSocket listening for Streamer connections on :8888
+15:18:53.983 WebSocket listening for SFU connections on :8889
+15:18:53.984 WebSocket listening for Players connections on :80
+15:18:53.985 Http listening on *: 80
+15:18:53.987 Frontend server not running, unable to setup game session
+15:18:58.520 player 1 (::ffff:127.0.0.1) connected
+15:18:58.521 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+15:18:58.521 [37m[players] <-[32m {"type":"playerCount","count":1}
+15:18:58.522 [37m1 ->[34m {"type":"listStreamers"}
+15:18:58.522 [37m1 <-[32m {"type":"streamerList","ids":[]}
+15:18:58.522 Frontend server not running, unable to setup game session
+15:19:01.305 [37m1 ->[34m {"type":"listStreamers"}
+15:19:01.306 [37m1 <-[32m {"type":"streamerList","ids":[]}
+15:19:04.311 [37m1 ->[34m {"type":"listStreamers"}
+15:19:04.311 [37m1 <-[32m {"type":"streamerList","ids":[]}
+15:19:04.314 player 1 connection closed: 1005 - 
+15:19:04.315 [37m[players] <-[32m {"type":"playerCount","count":0}
+15:19:04.326 Frontend server not running, unable to setup game session
+14:08:06.155 player 2 (::ffff:100.98.77.72) connected
+14:08:06.157 [37m2 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+14:08:06.158 [37m[players] <-[32m {"type":"playerCount","count":1}
+14:08:06.159 Frontend server not running, unable to setup game session
+14:08:06.463 [37m2 ->[34m {"type":"listStreamers"}
+14:08:06.463 [37m2 <-[32m {"type":"streamerList","ids":[]}
+14:08:08.973 [37m2 ->[34m {"type":"listStreamers"}
+14:08:08.973 [37m2 <-[32m {"type":"streamerList","ids":[]}
+14:08:11.986 [37m2 ->[34m {"type":"listStreamers"}
+14:08:11.986 [37m2 <-[32m {"type":"streamerList","ids":[]}
+14:08:12.065 player 2 connection closed: 1005 - 
+14:08:12.066 [37m[players] <-[32m {"type":"playerCount","count":0}
+14:08:12.071 Frontend server not running, unable to setup game session
+17:34:10.268 Streamer connected: ::ffff:127.0.0.1
+17:34:10.269 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+17:34:10.270 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+17:34:10.913 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+17:34:10.913 Registered new streamer: DefaultStreamer
+17:34:18.507 streamer DefaultStreamer disconnected: 1000 - 
+17:34:18.508 unsubscribing all players on DefaultStreamer
+10:35:14.771 player 3 (::ffff:100.98.77.72) connected
+10:35:14.787 [37m3 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+10:35:14.788 [37m[players] <-[32m {"type":"playerCount","count":1}
+10:35:14.792 Frontend server not running, unable to setup game session
+10:35:15.107 [37m3 ->[34m {"type":"listStreamers"}
+10:35:15.107 [37m3 <-[32m {"type":"streamerList","ids":[]}
+10:35:17.693 [37m3 ->[34m {"type":"listStreamers"}
+10:35:17.693 [37m3 <-[32m {"type":"streamerList","ids":[]}
+10:35:17.778 player 3 connection closed: 1005 - 
+10:35:17.778 [37m[players] <-[32m {"type":"playerCount","count":0}
+10:35:17.780 Frontend server not running, unable to setup game session
+10:41:48.011 player 4 (::ffff:100.127.127.14) connected
+10:41:48.012 [37m4 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+10:41:48.012 [37m[players] <-[32m {"type":"playerCount","count":1}
+10:41:48.013 Frontend server not running, unable to setup game session
+10:41:54.596 [37m4 ->[34m {"type":"listStreamers"}
+10:41:54.596 [37m4 <-[32m {"type":"streamerList","ids":[]}
+10:41:56.697 player 4 connection closed: 1005 - 
+10:41:56.698 [37m[players] <-[32m {"type":"playerCount","count":0}
+10:41:56.700 Frontend server not running, unable to setup game session
+10:52:56.605 Streamer connected: ::ffff:127.0.0.1
+10:52:56.605 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+10:52:56.606 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+10:52:57.229 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+10:52:57.230 Registered new streamer: DefaultStreamer
+10:54:18.745 streamer DefaultStreamer disconnected: 1000 - 
+10:54:18.745 unsubscribing all players on DefaultStreamer

@@ -1,0 +1,62 @@
+20:41:04.943 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+20:41:05.057 No peerConnectionConfig
+20:41:05.166 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+20:41:05.223 WebSocket listening for Streamer connections on :8888
+20:41:05.230 WebSocket listening for SFU connections on :8889
+20:41:05.233 WebSocket listening for Players connections on :80
+20:41:05.238 Http listening on *: 80
+20:41:05.248 Frontend server not running, unable to setup game session
+20:41:05.266 Streamer connected: ::1
+20:41:05.267 [37m::1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+20:41:05.270 [37m::1 <-[32m {"type":"identify"}
+20:41:05.365 [37m::1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+20:41:05.365 Registered new streamer: DefaultStreamer
+20:41:15.775 Unable to locate file player.html
+20:41:16.582 Unable to locate file player.html
+20:41:17.434 Unable to locate file player.html
+20:41:44.657 Streamer connected: ::ffff:127.0.0.1
+20:41:44.665 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+20:41:44.674 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+20:41:46.017 streamer ::ffff:127.0.0.1 disconnected: 1001 - 
+20:41:46.060 Streamer connected: ::ffff:127.0.0.1
+20:41:46.062 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+20:41:46.092 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+20:41:51.112 Registered new streamer: __LEGACY_STREAMER__0
+20:42:05.491 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218525}
+20:43:05.622 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218585}
+20:44:05.459 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218645}
+20:45:05.511 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218705}
+20:45:40.110 player 1 (::ffff:172.18.11.115) connected
+20:45:40.115 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+20:45:40.117 [37m[players] <-[32m {"type":"playerCount","count":1}
+20:45:40.120 player 1 connection closed: 1006 - 
+20:45:40.121 [37m[players] <-[32m {"type":"playerCount","count":0}
+20:45:40.128 Frontend server not running, unable to setup game session
+20:45:40.129 Frontend server not running, unable to setup game session
+20:45:42.266 Streamer connected: ::ffff:172.18.11.115
+20:45:42.268 [37m::ffff:172.18.11.115 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+20:45:42.268 [37m::ffff:172.18.11.115 <-[32m {"type":"identify"}
+20:45:42.270 streamer ::ffff:172.18.11.115 disconnected: 1006 - 
+20:46:05.421 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218765}
+20:47:05.441 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218825}
+20:48:05.433 [37mDefaultStreamer ->[34m {"type":"ping","time":1737218885}

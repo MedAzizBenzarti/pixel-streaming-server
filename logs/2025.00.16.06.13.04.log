@@ -1,0 +1,37 @@
+06:13:04.530 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+06:13:04.647 No peerConnectionConfig
+06:13:04.680 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+06:13:04.722 WebSocket listening for Streamer connections on :8888
+06:13:04.726 WebSocket listening for SFU connections on :8889
+06:13:04.729 WebSocket listening for Players connections on :80
+06:13:04.735 Http listening on *: 80
+06:13:06.802 Streamer connected: ::ffff:127.0.0.1
+06:13:06.804 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:13:06.805 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+06:13:06.887 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+06:13:06.888 Registered new streamer: DefaultStreamer
+06:13:26.952 Unable to locate file player.html
+06:13:46.115 Unable to locate file player.html
+06:14:06.937 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993646}
+06:15:07.146 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993707}
+06:16:06.950 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993766}

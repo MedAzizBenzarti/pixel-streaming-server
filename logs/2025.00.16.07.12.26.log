@@ -1,0 +1,45 @@
+07:12:26.965 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+07:12:27.028 No peerConnectionConfig
+07:12:27.039 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+07:12:27.067 WebSocket listening for Streamer connections on :8888
+07:12:27.070 WebSocket listening for SFU connections on :8889
+07:12:27.071 WebSocket listening for Players connections on :80
+07:12:27.073 Http listening on *: 80
+07:12:27.743 Streamer connected: ::ffff:127.0.0.1
+07:12:27.745 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:12:27.748 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:12:28.536 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+07:12:28.537 Registered new streamer: DefaultStreamer
+07:12:37.291 Streamer connected: ::ffff:127.0.0.1
+07:12:37.292 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:12:37.292 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:12:42.300 Registered new streamer: __LEGACY_STREAMER__0
+07:12:57.080 streamer __LEGACY_STREAMER__0 disconnected: 1001 - 
+07:12:57.081 unsubscribing all players on __LEGACY_STREAMER__0
+07:12:59.002 Streamer connected: ::ffff:127.0.0.1
+07:12:59.002 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:12:59.002 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:13:04.015 Registered new streamer: __LEGACY_STREAMER__1
+07:14:17.108 streamer __LEGACY_STREAMER__1 disconnected: 1001 - 
+07:14:17.112 unsubscribing all players on __LEGACY_STREAMER__1
+07:14:22.955 [37mDefaultStreamer ->[34m {"type":"ping","time":1736997262}

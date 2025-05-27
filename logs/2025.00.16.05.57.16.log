@@ -1,0 +1,45 @@
+05:57:16.744 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+05:57:16.932 No peerConnectionConfig
+05:57:16.941 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+05:57:17.066 WebSocket listening for Streamer connections on :8888
+05:57:17.068 WebSocket listening for SFU connections on :8889
+05:57:17.069 WebSocket listening for Players connections on :80
+05:57:17.071 Http listening on *: 80
+05:59:40.357 Streamer connected: ::ffff:127.0.0.1
+05:59:40.358 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+05:59:40.361 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+05:59:40.760 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+05:59:40.762 Registered new streamer: DefaultStreamer
+06:00:42.063 [37mDefaultStreamer ->[34m {"type":"ping","time":1736992842}
+06:01:41.968 [37mDefaultStreamer ->[34m {"type":"ping","time":1736992901}
+06:02:41.972 [37mDefaultStreamer ->[34m {"type":"ping","time":1736992961}
+06:03:42.048 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993022}
+06:04:41.964 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993081}
+06:05:41.968 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993141}
+06:06:41.864 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993201}
+06:07:42.044 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993262}
+06:08:41.760 Unable to locate file player.html
+06:08:42.021 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993322}
+06:09:42.021 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993381}
+06:10:42.029 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993442}
+06:11:42.131 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993502}

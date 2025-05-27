@@ -1,0 +1,45 @@
+07:15:33.038 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+07:15:33.091 No peerConnectionConfig
+07:15:33.099 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+07:15:33.121 WebSocket listening for Streamer connections on :8888
+07:15:33.125 WebSocket listening for SFU connections on :8889
+07:15:33.127 WebSocket listening for Players connections on :80
+07:15:33.131 Http listening on *: 80
+07:15:34.743 Streamer connected: ::ffff:127.0.0.1
+07:15:34.743 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:15:34.745 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:15:35.475 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+07:15:35.476 Registered new streamer: DefaultStreamer
+07:15:51.442 Streamer connected: ::ffff:127.0.0.1
+07:15:51.449 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:15:51.450 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:15:51.454 [37m-> ::ffff:127.0.0.1[34m: {"type":"identify","id":"Player"}
+07:15:51.454 unsupported Streamer message type: identify
+07:15:51.476 streamer ::ffff:127.0.0.1 disconnected: 1008 - Unsupported message type
+07:16:28.079 Streamer connected: ::ffff:127.0.0.1
+07:16:28.086 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:16:28.097 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:16:28.112 [37m-> ::ffff:127.0.0.1[34m: {"type":"identify","id":"Player"}
+07:16:28.113 unsupported Streamer message type: identify
+07:16:28.115 streamer ::ffff:127.0.0.1 disconnected: 1008 - Unsupported message type
+07:18:00.888 [37mDefaultStreamer ->[34m {"type":"ping","time":1736997480}

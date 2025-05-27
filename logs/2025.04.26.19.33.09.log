@@ -1,0 +1,44 @@
+19:33:09.362 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": true,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "0.0.0.0",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+19:33:09.414 WARNING: config.DisableSSLCert is true. Unauthorized SSL certificates will be allowed! This is convenient for local testing but please DO NOT SHIP THIS IN PRODUCTION. To remove this warning please set DisableSSLCert to false in your config.json.
+19:33:09.415 No peerConnectionConfig
+19:33:09.416 Redirecting http->https
+19:33:09.435 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+19:33:09.444 WebSocket listening for Streamer connections on :8888
+19:33:09.445 WebSocket listening for SFU connections on :8889
+19:33:09.446 WebSocket listening for Players connections on :80
+19:33:09.446 (node:39984) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+19:33:09.447 Http listening on *: 80
+19:33:09.447 Https listening on *: 443
+19:33:09.457 Status code: 404
+19:33:09.458 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /server/requestSessionId</pre>
+</body>
+</html>
+

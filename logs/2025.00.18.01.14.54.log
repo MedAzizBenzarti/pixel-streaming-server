@@ -1,0 +1,41 @@
+01:14:54.492 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+01:14:54.544 No peerConnectionConfig
+01:14:54.599 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+01:14:54.614 WebSocket listening for Streamer connections on :8888
+01:14:54.615 WebSocket listening for SFU connections on :8889
+01:14:54.616 WebSocket listening for Players connections on :80
+01:14:54.619 Http listening on *: 80
+01:14:54.625 Frontend server not running, unable to setup game session
+01:15:14.902 Streamer connected: ::1
+01:15:14.903 [37m::1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:15:14.904 [37m::1 <-[32m {"type":"identify"}
+01:15:15.263 [37m::1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+01:15:15.264 Registered new streamer: DefaultStreamer
+01:15:27.233 Streamer connected: ::ffff:127.0.0.1
+01:15:27.239 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:15:27.253 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:15:27.261 [37m-> ::ffff:127.0.0.1[34m: {"type":"config","peerConnectionOptions":{}}
+01:15:27.261 unsupported Streamer message type: config
+01:15:27.269 streamer ::ffff:127.0.0.1 disconnected: 1008 - Unsupported message type
+01:16:15.330 [37mDefaultStreamer ->[34m {"type":"ping","time":1737148575}
+01:17:15.497 [37mDefaultStreamer ->[34m {"type":"ping","time":1737148635}

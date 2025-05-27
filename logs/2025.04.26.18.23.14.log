@@ -1,0 +1,1054 @@
+18:23:14.606 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "0.0.0.0",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+18:23:14.631 No peerConnectionConfig
+18:23:14.666 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+18:23:14.675 WebSocket listening for Streamer connections on :8888
+18:23:14.676 WebSocket listening for SFU connections on :8889
+18:23:14.676 WebSocket listening for Players connections on :80
+18:23:14.678 Http listening on *: 80
+18:23:14.680 Frontend server not running, unable to setup game session
+18:23:16.069 player 1 (::1) connected
+18:23:16.070 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:16.070 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:16.072 Frontend server not running, unable to setup game session
+18:23:16.125 [37m1 ->[34m {"type":"listStreamers"}
+18:23:16.125 [37m1 <-[32m {"type":"streamerList","ids":[]}
+18:23:16.182 player 1 connection closed: 1005 - 
+18:23:16.182 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:16.184 Frontend server not running, unable to setup game session
+18:23:20.068 player 2 (::1) connected
+18:23:20.069 [37m2 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:20.069 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:20.070 Frontend server not running, unable to setup game session
+18:23:20.125 [37m2 ->[34m {"type":"listStreamers"}
+18:23:20.125 [37m2 <-[32m {"type":"streamerList","ids":[]}
+18:23:20.182 player 2 connection closed: 1005 - 
+18:23:20.182 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:20.184 Frontend server not running, unable to setup game session
+18:23:23.269 player 3 (::1) connected
+18:23:23.270 [37m3 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:23.270 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:23.272 Frontend server not running, unable to setup game session
+18:23:23.327 [37m3 ->[34m {"type":"listStreamers"}
+18:23:23.327 [37m3 <-[32m {"type":"streamerList","ids":[]}
+18:23:23.385 player 3 connection closed: 1005 - 
+18:23:23.385 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:23.387 Frontend server not running, unable to setup game session
+18:23:27.076 player 4 (::1) connected
+18:23:27.078 [37m4 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:27.078 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:27.080 Frontend server not running, unable to setup game session
+18:23:27.134 [37m4 ->[34m {"type":"listStreamers"}
+18:23:27.134 [37m4 <-[32m {"type":"streamerList","ids":[]}
+18:23:27.199 player 4 connection closed: 1005 - 
+18:23:27.199 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:27.202 Frontend server not running, unable to setup game session
+18:23:31.082 player 5 (::1) connected
+18:23:31.083 [37m5 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:31.084 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:31.085 Frontend server not running, unable to setup game session
+18:23:31.140 [37m5 ->[34m {"type":"listStreamers"}
+18:23:31.140 [37m5 <-[32m {"type":"streamerList","ids":[]}
+18:23:31.198 player 5 connection closed: 1005 - 
+18:23:31.198 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:31.200 Frontend server not running, unable to setup game session
+18:23:35.079 player 6 (::1) connected
+18:23:35.080 [37m6 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:35.080 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:35.082 Frontend server not running, unable to setup game session
+18:23:35.137 [37m6 ->[34m {"type":"listStreamers"}
+18:23:35.137 [37m6 <-[32m {"type":"streamerList","ids":[]}
+18:23:35.195 player 6 connection closed: 1005 - 
+18:23:35.195 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:35.197 Frontend server not running, unable to setup game session
+18:23:39.066 player 7 (::1) connected
+18:23:39.067 [37m7 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:39.067 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:39.068 Frontend server not running, unable to setup game session
+18:23:39.124 [37m7 ->[34m {"type":"listStreamers"}
+18:23:39.124 [37m7 <-[32m {"type":"streamerList","ids":[]}
+18:23:39.181 player 7 connection closed: 1005 - 
+18:23:39.181 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:39.183 Frontend server not running, unable to setup game session
+18:23:43.069 player 8 (::1) connected
+18:23:43.070 [37m8 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:43.070 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:43.071 Frontend server not running, unable to setup game session
+18:23:43.125 [37m8 ->[34m {"type":"listStreamers"}
+18:23:43.125 [37m8 <-[32m {"type":"streamerList","ids":[]}
+18:23:43.182 player 8 connection closed: 1005 - 
+18:23:43.182 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:43.184 Frontend server not running, unable to setup game session
+18:23:47.078 player 9 (::1) connected
+18:23:47.078 [37m9 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:47.079 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:47.080 Frontend server not running, unable to setup game session
+18:23:47.134 [37m9 ->[34m {"type":"listStreamers"}
+18:23:47.134 [37m9 <-[32m {"type":"streamerList","ids":[]}
+18:23:47.191 player 9 connection closed: 1005 - 
+18:23:47.191 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:47.193 Frontend server not running, unable to setup game session
+18:23:51.129 player 10 (::1) connected
+18:23:51.130 [37m10 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:51.130 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:51.131 Frontend server not running, unable to setup game session
+18:23:51.202 [37m10 ->[34m {"type":"listStreamers"}
+18:23:51.202 [37m10 <-[32m {"type":"streamerList","ids":[]}
+18:23:51.265 player 10 connection closed: 1005 - 
+18:23:51.265 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:51.267 Frontend server not running, unable to setup game session
+18:23:55.074 player 11 (::1) connected
+18:23:55.075 [37m11 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:55.075 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:55.076 Frontend server not running, unable to setup game session
+18:23:55.131 [37m11 ->[34m {"type":"listStreamers"}
+18:23:55.131 [37m11 <-[32m {"type":"streamerList","ids":[]}
+18:23:55.190 player 11 connection closed: 1005 - 
+18:23:55.190 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:55.192 Frontend server not running, unable to setup game session
+18:23:59.088 player 12 (::1) connected
+18:23:59.089 [37m12 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:23:59.089 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:23:59.090 Frontend server not running, unable to setup game session
+18:23:59.175 [37m12 ->[34m {"type":"listStreamers"}
+18:23:59.175 [37m12 <-[32m {"type":"streamerList","ids":[]}
+18:23:59.235 player 12 connection closed: 1005 - 
+18:23:59.235 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:23:59.237 Frontend server not running, unable to setup game session
+18:24:03.070 player 13 (::1) connected
+18:24:03.071 [37m13 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:03.071 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:03.072 Frontend server not running, unable to setup game session
+18:24:03.141 [37m13 ->[34m {"type":"listStreamers"}
+18:24:03.142 [37m13 <-[32m {"type":"streamerList","ids":[]}
+18:24:03.197 player 13 connection closed: 1005 - 
+18:24:03.198 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:03.199 Frontend server not running, unable to setup game session
+18:24:07.088 player 14 (::1) connected
+18:24:07.089 [37m14 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:07.089 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:07.090 Frontend server not running, unable to setup game session
+18:24:07.153 [37m14 ->[34m {"type":"listStreamers"}
+18:24:07.153 [37m14 <-[32m {"type":"streamerList","ids":[]}
+18:24:07.210 player 14 connection closed: 1005 - 
+18:24:07.210 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:07.212 Frontend server not running, unable to setup game session
+18:24:11.064 player 15 (::1) connected
+18:24:11.065 [37m15 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:11.065 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:11.065 Frontend server not running, unable to setup game session
+18:24:11.119 [37m15 ->[34m {"type":"listStreamers"}
+18:24:11.119 [37m15 <-[32m {"type":"streamerList","ids":[]}
+18:24:11.175 player 15 connection closed: 1005 - 
+18:24:11.175 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:11.177 Frontend server not running, unable to setup game session
+18:24:15.072 player 16 (::1) connected
+18:24:15.073 [37m16 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:15.073 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:15.074 Frontend server not running, unable to setup game session
+18:24:15.132 [37m16 ->[34m {"type":"listStreamers"}
+18:24:15.132 [37m16 <-[32m {"type":"streamerList","ids":[]}
+18:24:15.190 player 16 connection closed: 1005 - 
+18:24:15.190 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:15.191 Frontend server not running, unable to setup game session
+18:24:19.065 player 17 (::1) connected
+18:24:19.065 [37m17 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:19.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:19.067 Frontend server not running, unable to setup game session
+18:24:19.127 [37m17 ->[34m {"type":"listStreamers"}
+18:24:19.127 [37m17 <-[32m {"type":"streamerList","ids":[]}
+18:24:19.188 player 17 connection closed: 1005 - 
+18:24:19.188 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:19.190 Frontend server not running, unable to setup game session
+18:24:23.057 player 18 (::1) connected
+18:24:23.058 [37m18 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:23.058 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:23.059 Frontend server not running, unable to setup game session
+18:24:23.112 [37m18 ->[34m {"type":"listStreamers"}
+18:24:23.112 [37m18 <-[32m {"type":"streamerList","ids":[]}
+18:24:23.168 player 18 connection closed: 1005 - 
+18:24:23.168 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:23.170 Frontend server not running, unable to setup game session
+18:24:27.077 player 19 (::1) connected
+18:24:27.077 [37m19 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:27.078 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:27.079 Frontend server not running, unable to setup game session
+18:24:27.132 [37m19 ->[34m {"type":"listStreamers"}
+18:24:27.133 [37m19 <-[32m {"type":"streamerList","ids":[]}
+18:24:27.188 player 19 connection closed: 1005 - 
+18:24:27.189 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:27.190 Frontend server not running, unable to setup game session
+18:24:31.059 player 20 (::1) connected
+18:24:31.060 [37m20 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:31.060 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:31.061 Frontend server not running, unable to setup game session
+18:24:31.114 [37m20 ->[34m {"type":"listStreamers"}
+18:24:31.114 [37m20 <-[32m {"type":"streamerList","ids":[]}
+18:24:31.170 player 20 connection closed: 1005 - 
+18:24:31.170 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:31.172 Frontend server not running, unable to setup game session
+18:24:35.076 player 21 (::1) connected
+18:24:35.077 [37m21 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:35.077 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:35.078 Frontend server not running, unable to setup game session
+18:24:35.132 [37m21 ->[34m {"type":"listStreamers"}
+18:24:35.132 [37m21 <-[32m {"type":"streamerList","ids":[]}
+18:24:35.189 player 21 connection closed: 1005 - 
+18:24:35.189 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:35.191 Frontend server not running, unable to setup game session
+18:24:39.057 player 22 (::1) connected
+18:24:39.058 [37m22 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:39.058 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:39.059 Frontend server not running, unable to setup game session
+18:24:39.115 [37m22 ->[34m {"type":"listStreamers"}
+18:24:39.115 [37m22 <-[32m {"type":"streamerList","ids":[]}
+18:24:39.171 player 22 connection closed: 1005 - 
+18:24:39.171 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:39.174 Frontend server not running, unable to setup game session
+18:24:43.079 player 23 (::1) connected
+18:24:43.080 [37m23 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:43.080 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:43.081 Frontend server not running, unable to setup game session
+18:24:43.136 [37m23 ->[34m {"type":"listStreamers"}
+18:24:43.136 [37m23 <-[32m {"type":"streamerList","ids":[]}
+18:24:43.194 player 23 connection closed: 1005 - 
+18:24:43.194 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:43.196 Frontend server not running, unable to setup game session
+18:24:47.065 player 24 (::1) connected
+18:24:47.066 [37m24 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:47.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:47.067 Frontend server not running, unable to setup game session
+18:24:47.121 [37m24 ->[34m {"type":"listStreamers"}
+18:24:47.121 [37m24 <-[32m {"type":"streamerList","ids":[]}
+18:24:47.177 player 24 connection closed: 1005 - 
+18:24:47.177 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:47.179 Frontend server not running, unable to setup game session
+18:24:51.071 player 25 (::1) connected
+18:24:51.072 [37m25 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:51.072 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:51.073 Frontend server not running, unable to setup game session
+18:24:51.139 [37m25 ->[34m {"type":"listStreamers"}
+18:24:51.139 [37m25 <-[32m {"type":"streamerList","ids":[]}
+18:24:51.199 player 25 connection closed: 1005 - 
+18:24:51.199 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:51.201 Frontend server not running, unable to setup game session
+18:24:55.076 player 26 (::1) connected
+18:24:55.077 [37m26 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:55.077 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:55.078 Frontend server not running, unable to setup game session
+18:24:55.133 [37m26 ->[34m {"type":"listStreamers"}
+18:24:55.133 [37m26 <-[32m {"type":"streamerList","ids":[]}
+18:24:55.190 player 26 connection closed: 1005 - 
+18:24:55.190 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:55.191 Frontend server not running, unable to setup game session
+18:24:59.065 player 27 (::1) connected
+18:24:59.066 [37m27 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:24:59.067 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:24:59.068 Frontend server not running, unable to setup game session
+18:24:59.122 [37m27 ->[34m {"type":"listStreamers"}
+18:24:59.122 [37m27 <-[32m {"type":"streamerList","ids":[]}
+18:24:59.179 player 27 connection closed: 1005 - 
+18:24:59.179 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:24:59.181 Frontend server not running, unable to setup game session
+18:25:03.060 player 28 (::1) connected
+18:25:03.061 [37m28 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:03.061 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:03.062 Frontend server not running, unable to setup game session
+18:25:03.116 [37m28 ->[34m {"type":"listStreamers"}
+18:25:03.117 [37m28 <-[32m {"type":"streamerList","ids":[]}
+18:25:03.173 player 28 connection closed: 1005 - 
+18:25:03.173 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:03.175 Frontend server not running, unable to setup game session
+18:25:07.072 player 29 (::1) connected
+18:25:07.073 [37m29 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:07.073 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:07.074 Frontend server not running, unable to setup game session
+18:25:07.134 [37m29 ->[34m {"type":"listStreamers"}
+18:25:07.134 [37m29 <-[32m {"type":"streamerList","ids":[]}
+18:25:07.190 player 29 connection closed: 1005 - 
+18:25:07.190 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:07.192 Frontend server not running, unable to setup game session
+18:25:11.063 player 30 (::1) connected
+18:25:11.064 [37m30 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:11.064 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:11.065 Frontend server not running, unable to setup game session
+18:25:11.119 [37m30 ->[34m {"type":"listStreamers"}
+18:25:11.120 [37m30 <-[32m {"type":"streamerList","ids":[]}
+18:25:11.176 player 30 connection closed: 1005 - 
+18:25:11.176 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:11.178 Frontend server not running, unable to setup game session
+18:25:15.077 player 31 (::1) connected
+18:25:15.078 [37m31 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:15.078 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:15.079 Frontend server not running, unable to setup game session
+18:25:15.133 [37m31 ->[34m {"type":"listStreamers"}
+18:25:15.133 [37m31 <-[32m {"type":"streamerList","ids":[]}
+18:25:15.189 player 31 connection closed: 1005 - 
+18:25:15.190 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:15.191 Frontend server not running, unable to setup game session
+18:25:19.076 player 32 (::1) connected
+18:25:19.077 [37m32 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:19.077 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:19.078 Frontend server not running, unable to setup game session
+18:25:19.132 [37m32 ->[34m {"type":"listStreamers"}
+18:25:19.132 [37m32 <-[32m {"type":"streamerList","ids":[]}
+18:25:19.189 player 32 connection closed: 1005 - 
+18:25:19.189 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:19.191 Frontend server not running, unable to setup game session
+18:25:23.091 player 33 (::1) connected
+18:25:23.092 [37m33 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:23.092 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:23.093 Frontend server not running, unable to setup game session
+18:25:23.155 [37m33 ->[34m {"type":"listStreamers"}
+18:25:23.155 [37m33 <-[32m {"type":"streamerList","ids":[]}
+18:25:23.212 player 33 connection closed: 1005 - 
+18:25:23.212 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:23.214 Frontend server not running, unable to setup game session
+18:25:27.060 player 34 (::1) connected
+18:25:27.061 [37m34 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:27.061 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:27.062 Frontend server not running, unable to setup game session
+18:25:27.113 [37m34 ->[34m {"type":"listStreamers"}
+18:25:27.113 [37m34 <-[32m {"type":"streamerList","ids":[]}
+18:25:27.167 player 34 connection closed: 1005 - 
+18:25:27.167 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:27.169 Frontend server not running, unable to setup game session
+18:25:31.105 player 35 (::1) connected
+18:25:31.106 [37m35 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:31.106 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:31.107 Frontend server not running, unable to setup game session
+18:25:31.161 [37m35 ->[34m {"type":"listStreamers"}
+18:25:31.161 [37m35 <-[32m {"type":"streamerList","ids":[]}
+18:25:31.217 player 35 connection closed: 1005 - 
+18:25:31.218 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:31.219 Frontend server not running, unable to setup game session
+18:25:35.059 player 36 (::1) connected
+18:25:35.060 [37m36 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:35.060 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:35.061 Frontend server not running, unable to setup game session
+18:25:35.112 [37m36 ->[34m {"type":"listStreamers"}
+18:25:35.113 [37m36 <-[32m {"type":"streamerList","ids":[]}
+18:25:35.166 player 36 connection closed: 1005 - 
+18:25:35.166 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:35.168 Frontend server not running, unable to setup game session
+18:25:39.058 player 37 (::1) connected
+18:25:39.059 [37m37 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:39.059 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:39.061 Frontend server not running, unable to setup game session
+18:25:39.111 [37m37 ->[34m {"type":"listStreamers"}
+18:25:39.111 [37m37 <-[32m {"type":"streamerList","ids":[]}
+18:25:39.165 player 37 connection closed: 1005 - 
+18:25:39.165 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:39.167 Frontend server not running, unable to setup game session
+18:25:43.052 player 38 (::1) connected
+18:25:43.053 [37m38 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:43.053 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:43.054 Frontend server not running, unable to setup game session
+18:25:43.105 [37m38 ->[34m {"type":"listStreamers"}
+18:25:43.105 [37m38 <-[32m {"type":"streamerList","ids":[]}
+18:25:43.159 player 38 connection closed: 1005 - 
+18:25:43.159 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:43.161 Frontend server not running, unable to setup game session
+18:25:47.064 player 39 (::1) connected
+18:25:47.065 [37m39 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:47.065 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:47.066 Frontend server not running, unable to setup game session
+18:25:47.117 [37m39 ->[34m {"type":"listStreamers"}
+18:25:47.118 [37m39 <-[32m {"type":"streamerList","ids":[]}
+18:25:47.171 player 39 connection closed: 1005 - 
+18:25:47.172 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:47.173 Frontend server not running, unable to setup game session
+18:25:51.064 player 40 (::1) connected
+18:25:51.065 [37m40 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:51.065 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:51.066 Frontend server not running, unable to setup game session
+18:25:51.121 [37m40 ->[34m {"type":"listStreamers"}
+18:25:51.122 [37m40 <-[32m {"type":"streamerList","ids":[]}
+18:25:51.179 player 40 connection closed: 1005 - 
+18:25:51.179 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:51.181 Frontend server not running, unable to setup game session
+18:25:55.087 player 41 (::1) connected
+18:25:55.087 [37m41 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:55.088 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:55.089 Frontend server not running, unable to setup game session
+18:25:55.155 [37m41 ->[34m {"type":"listStreamers"}
+18:25:55.156 [37m41 <-[32m {"type":"streamerList","ids":[]}
+18:25:55.235 player 41 connection closed: 1005 - 
+18:25:55.235 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:55.237 Frontend server not running, unable to setup game session
+18:25:59.082 player 42 (::1) connected
+18:25:59.083 [37m42 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:25:59.083 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:25:59.085 Frontend server not running, unable to setup game session
+18:25:59.182 [37m42 ->[34m {"type":"listStreamers"}
+18:25:59.182 [37m42 <-[32m {"type":"streamerList","ids":[]}
+18:25:59.265 player 42 connection closed: 1005 - 
+18:25:59.265 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:25:59.267 Frontend server not running, unable to setup game session
+18:26:03.065 player 43 (::1) connected
+18:26:03.066 [37m43 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:03.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:03.067 Frontend server not running, unable to setup game session
+18:26:03.121 [37m43 ->[34m {"type":"listStreamers"}
+18:26:03.121 [37m43 <-[32m {"type":"streamerList","ids":[]}
+18:26:03.181 player 43 connection closed: 1005 - 
+18:26:03.181 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:03.183 Frontend server not running, unable to setup game session
+18:26:07.054 player 44 (::1) connected
+18:26:07.055 [37m44 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:07.055 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:07.056 Frontend server not running, unable to setup game session
+18:26:07.107 [37m44 ->[34m {"type":"listStreamers"}
+18:26:07.107 [37m44 <-[32m {"type":"streamerList","ids":[]}
+18:26:07.161 player 44 connection closed: 1005 - 
+18:26:07.161 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:07.163 Frontend server not running, unable to setup game session
+18:26:11.069 player 45 (::1) connected
+18:26:11.070 [37m45 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:11.070 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:11.071 Frontend server not running, unable to setup game session
+18:26:11.131 [37m45 ->[34m {"type":"listStreamers"}
+18:26:11.132 [37m45 <-[32m {"type":"streamerList","ids":[]}
+18:26:11.187 player 45 connection closed: 1005 - 
+18:26:11.187 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:11.189 Frontend server not running, unable to setup game session
+18:26:15.065 player 46 (::1) connected
+18:26:15.065 [37m46 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:15.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:15.067 Frontend server not running, unable to setup game session
+18:26:15.120 [37m46 ->[34m {"type":"listStreamers"}
+18:26:15.120 [37m46 <-[32m {"type":"streamerList","ids":[]}
+18:26:15.181 player 46 connection closed: 1005 - 
+18:26:15.182 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:15.183 Frontend server not running, unable to setup game session
+18:26:19.088 player 47 (::1) connected
+18:26:19.089 [37m47 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:19.089 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:19.090 Frontend server not running, unable to setup game session
+18:26:19.142 [37m47 ->[34m {"type":"listStreamers"}
+18:26:19.142 [37m47 <-[32m {"type":"streamerList","ids":[]}
+18:26:19.216 player 47 connection closed: 1005 - 
+18:26:19.216 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:19.218 Frontend server not running, unable to setup game session
+18:26:23.064 player 48 (::1) connected
+18:26:23.065 [37m48 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:23.065 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:23.066 Frontend server not running, unable to setup game session
+18:26:23.119 [37m48 ->[34m {"type":"listStreamers"}
+18:26:23.119 [37m48 <-[32m {"type":"streamerList","ids":[]}
+18:26:23.185 player 48 connection closed: 1005 - 
+18:26:23.186 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:23.187 Frontend server not running, unable to setup game session
+18:26:27.090 player 49 (::1) connected
+18:26:27.091 [37m49 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:27.091 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:27.092 Frontend server not running, unable to setup game session
+18:26:27.147 [37m49 ->[34m {"type":"listStreamers"}
+18:26:27.147 [37m49 <-[32m {"type":"streamerList","ids":[]}
+18:26:27.204 player 49 connection closed: 1005 - 
+18:26:27.204 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:27.206 Frontend server not running, unable to setup game session
+18:26:31.073 player 50 (::1) connected
+18:26:31.074 [37m50 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:31.074 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:31.075 Frontend server not running, unable to setup game session
+18:26:31.129 [37m50 ->[34m {"type":"listStreamers"}
+18:26:31.129 [37m50 <-[32m {"type":"streamerList","ids":[]}
+18:26:31.185 player 50 connection closed: 1005 - 
+18:26:31.185 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:31.187 Frontend server not running, unable to setup game session
+18:26:35.082 player 51 (::1) connected
+18:26:35.083 [37m51 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:35.083 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:35.084 Frontend server not running, unable to setup game session
+18:26:35.139 [37m51 ->[34m {"type":"listStreamers"}
+18:26:35.139 [37m51 <-[32m {"type":"streamerList","ids":[]}
+18:26:35.196 player 51 connection closed: 1005 - 
+18:26:35.196 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:35.198 Frontend server not running, unable to setup game session
+18:26:39.065 player 52 (::1) connected
+18:26:39.066 [37m52 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:39.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:39.067 Frontend server not running, unable to setup game session
+18:26:39.122 [37m52 ->[34m {"type":"listStreamers"}
+18:26:39.123 [37m52 <-[32m {"type":"streamerList","ids":[]}
+18:26:39.180 player 52 connection closed: 1005 - 
+18:26:39.180 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:39.182 Frontend server not running, unable to setup game session
+18:26:43.080 player 53 (::1) connected
+18:26:43.080 [37m53 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:43.081 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:43.082 Frontend server not running, unable to setup game session
+18:26:43.136 [37m53 ->[34m {"type":"listStreamers"}
+18:26:43.136 [37m53 <-[32m {"type":"streamerList","ids":[]}
+18:26:43.192 player 53 connection closed: 1005 - 
+18:26:43.193 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:43.195 Frontend server not running, unable to setup game session
+18:26:47.065 player 54 (::1) connected
+18:26:47.066 [37m54 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:47.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:47.067 Frontend server not running, unable to setup game session
+18:26:47.120 [37m54 ->[34m {"type":"listStreamers"}
+18:26:47.121 [37m54 <-[32m {"type":"streamerList","ids":[]}
+18:26:47.189 player 54 connection closed: 1005 - 
+18:26:47.189 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:47.191 Frontend server not running, unable to setup game session
+18:26:51.298 player 55 (::1) connected
+18:26:51.298 [37m55 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:51.298 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:51.299 Frontend server not running, unable to setup game session
+18:26:51.353 [37m55 ->[34m {"type":"listStreamers"}
+18:26:51.353 [37m55 <-[32m {"type":"streamerList","ids":[]}
+18:26:51.446 player 55 connection closed: 1005 - 
+18:26:51.446 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:51.448 Frontend server not running, unable to setup game session
+18:26:55.092 player 56 (::1) connected
+18:26:55.093 [37m56 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:55.093 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:55.094 Frontend server not running, unable to setup game session
+18:26:55.148 [37m56 ->[34m {"type":"listStreamers"}
+18:26:55.148 [37m56 <-[32m {"type":"streamerList","ids":[]}
+18:26:55.204 player 56 connection closed: 1005 - 
+18:26:55.204 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:55.205 Frontend server not running, unable to setup game session
+18:26:59.079 player 57 (::1) connected
+18:26:59.080 [37m57 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:26:59.080 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:26:59.081 Frontend server not running, unable to setup game session
+18:26:59.135 [37m57 ->[34m {"type":"listStreamers"}
+18:26:59.136 [37m57 <-[32m {"type":"streamerList","ids":[]}
+18:26:59.191 player 57 connection closed: 1005 - 
+18:26:59.191 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:26:59.193 Frontend server not running, unable to setup game session
+18:27:03.063 player 58 (::1) connected
+18:27:03.064 [37m58 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:03.064 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:03.065 Frontend server not running, unable to setup game session
+18:27:03.120 [37m58 ->[34m {"type":"listStreamers"}
+18:27:03.120 [37m58 <-[32m {"type":"streamerList","ids":[]}
+18:27:03.178 player 58 connection closed: 1005 - 
+18:27:03.179 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:03.180 Frontend server not running, unable to setup game session
+18:27:07.084 player 59 (::1) connected
+18:27:07.085 [37m59 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:07.085 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:07.086 Frontend server not running, unable to setup game session
+18:27:07.140 [37m59 ->[34m {"type":"listStreamers"}
+18:27:07.140 [37m59 <-[32m {"type":"streamerList","ids":[]}
+18:27:07.198 player 59 connection closed: 1005 - 
+18:27:07.198 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:07.201 Frontend server not running, unable to setup game session
+18:27:11.073 player 60 (::1) connected
+18:27:11.074 [37m60 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:11.074 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:11.075 Frontend server not running, unable to setup game session
+18:27:11.136 [37m60 ->[34m {"type":"listStreamers"}
+18:27:11.136 [37m60 <-[32m {"type":"streamerList","ids":[]}
+18:27:11.192 player 60 connection closed: 1005 - 
+18:27:11.192 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:11.195 Frontend server not running, unable to setup game session
+18:27:15.065 player 61 (::1) connected
+18:27:15.066 [37m61 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:15.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:15.067 Frontend server not running, unable to setup game session
+18:27:15.120 [37m61 ->[34m {"type":"listStreamers"}
+18:27:15.120 [37m61 <-[32m {"type":"streamerList","ids":[]}
+18:27:15.175 player 61 connection closed: 1005 - 
+18:27:15.175 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:15.177 Frontend server not running, unable to setup game session
+18:27:19.060 player 62 (::1) connected
+18:27:19.061 [37m62 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:19.061 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:19.063 Frontend server not running, unable to setup game session
+18:27:19.121 [37m62 ->[34m {"type":"listStreamers"}
+18:27:19.122 [37m62 <-[32m {"type":"streamerList","ids":[]}
+18:27:19.178 player 62 connection closed: 1005 - 
+18:27:19.179 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:19.180 Frontend server not running, unable to setup game session
+18:27:23.080 player 63 (::1) connected
+18:27:23.081 [37m63 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:23.082 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:23.083 Frontend server not running, unable to setup game session
+18:27:23.138 [37m63 ->[34m {"type":"listStreamers"}
+18:27:23.138 [37m63 <-[32m {"type":"streamerList","ids":[]}
+18:27:23.195 player 63 connection closed: 1005 - 
+18:27:23.195 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:23.197 Frontend server not running, unable to setup game session
+18:27:27.076 player 64 (::1) connected
+18:27:27.077 [37m64 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:27.077 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:27.079 Frontend server not running, unable to setup game session
+18:27:27.132 [37m64 ->[34m {"type":"listStreamers"}
+18:27:27.132 [37m64 <-[32m {"type":"streamerList","ids":[]}
+18:27:27.189 player 64 connection closed: 1005 - 
+18:27:27.189 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:27.191 Frontend server not running, unable to setup game session
+18:27:31.131 player 65 (::1) connected
+18:27:31.131 [37m65 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:31.132 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:31.133 Frontend server not running, unable to setup game session
+18:27:31.196 [37m65 ->[34m {"type":"listStreamers"}
+18:27:31.196 [37m65 <-[32m {"type":"streamerList","ids":[]}
+18:27:31.251 player 65 connection closed: 1005 - 
+18:27:31.251 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:31.253 Frontend server not running, unable to setup game session
+18:27:35.053 player 66 (::1) connected
+18:27:35.054 [37m66 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:35.054 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:35.056 Frontend server not running, unable to setup game session
+18:27:35.106 [37m66 ->[34m {"type":"listStreamers"}
+18:27:35.106 [37m66 <-[32m {"type":"streamerList","ids":[]}
+18:27:35.160 player 66 connection closed: 1005 - 
+18:27:35.160 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:35.163 Frontend server not running, unable to setup game session
+18:27:39.066 player 67 (::1) connected
+18:27:39.068 [37m67 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:39.068 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:39.069 Frontend server not running, unable to setup game session
+18:27:39.120 [37m67 ->[34m {"type":"listStreamers"}
+18:27:39.120 [37m67 <-[32m {"type":"streamerList","ids":[]}
+18:27:39.176 player 67 connection closed: 1005 - 
+18:27:39.176 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:39.178 Frontend server not running, unable to setup game session
+18:27:43.059 player 68 (::1) connected
+18:27:43.060 [37m68 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:43.060 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:43.061 Frontend server not running, unable to setup game session
+18:27:43.112 [37m68 ->[34m {"type":"listStreamers"}
+18:27:43.112 [37m68 <-[32m {"type":"streamerList","ids":[]}
+18:27:43.166 player 68 connection closed: 1005 - 
+18:27:43.166 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:43.168 Frontend server not running, unable to setup game session
+18:27:47.066 player 69 (::1) connected
+18:27:47.067 [37m69 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:47.067 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:47.068 Frontend server not running, unable to setup game session
+18:27:47.119 [37m69 ->[34m {"type":"listStreamers"}
+18:27:47.120 [37m69 <-[32m {"type":"streamerList","ids":[]}
+18:27:47.173 player 69 connection closed: 1005 - 
+18:27:47.173 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:47.175 Frontend server not running, unable to setup game session
+18:27:51.068 player 70 (::1) connected
+18:27:51.069 [37m70 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:51.069 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:51.070 Frontend server not running, unable to setup game session
+18:27:51.121 [37m70 ->[34m {"type":"listStreamers"}
+18:27:51.121 [37m70 <-[32m {"type":"streamerList","ids":[]}
+18:27:51.175 player 70 connection closed: 1005 - 
+18:27:51.175 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:51.177 Frontend server not running, unable to setup game session
+18:27:55.067 player 71 (::1) connected
+18:27:55.068 [37m71 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:55.068 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:55.069 Frontend server not running, unable to setup game session
+18:27:55.120 [37m71 ->[34m {"type":"listStreamers"}
+18:27:55.120 [37m71 <-[32m {"type":"streamerList","ids":[]}
+18:27:55.177 player 71 connection closed: 1005 - 
+18:27:55.177 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:55.179 Frontend server not running, unable to setup game session
+18:27:59.055 player 72 (::1) connected
+18:27:59.056 [37m72 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:27:59.056 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:27:59.057 Frontend server not running, unable to setup game session
+18:27:59.108 [37m72 ->[34m {"type":"listStreamers"}
+18:27:59.108 [37m72 <-[32m {"type":"streamerList","ids":[]}
+18:27:59.162 player 72 connection closed: 1005 - 
+18:27:59.162 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:27:59.164 Frontend server not running, unable to setup game session
+18:28:03.068 player 73 (::1) connected
+18:28:03.068 [37m73 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:03.069 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:03.070 Frontend server not running, unable to setup game session
+18:28:03.121 [37m73 ->[34m {"type":"listStreamers"}
+18:28:03.121 [37m73 <-[32m {"type":"streamerList","ids":[]}
+18:28:03.176 player 73 connection closed: 1005 - 
+18:28:03.176 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:03.178 Frontend server not running, unable to setup game session
+18:28:07.058 player 74 (::1) connected
+18:28:07.059 [37m74 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:07.059 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:07.060 Frontend server not running, unable to setup game session
+18:28:07.111 [37m74 ->[34m {"type":"listStreamers"}
+18:28:07.111 [37m74 <-[32m {"type":"streamerList","ids":[]}
+18:28:07.166 player 74 connection closed: 1005 - 
+18:28:07.166 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:07.168 Frontend server not running, unable to setup game session
+18:28:11.070 player 75 (::1) connected
+18:28:11.071 [37m75 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:11.071 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:11.072 Frontend server not running, unable to setup game session
+18:28:11.124 [37m75 ->[34m {"type":"listStreamers"}
+18:28:11.124 [37m75 <-[32m {"type":"streamerList","ids":[]}
+18:28:11.181 player 75 connection closed: 1005 - 
+18:28:11.181 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:11.183 Frontend server not running, unable to setup game session
+18:28:15.067 player 76 (::1) connected
+18:28:15.067 [37m76 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:15.068 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:15.069 Frontend server not running, unable to setup game session
+18:28:15.120 [37m76 ->[34m {"type":"listStreamers"}
+18:28:15.120 [37m76 <-[32m {"type":"streamerList","ids":[]}
+18:28:15.173 player 76 connection closed: 1005 - 
+18:28:15.173 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:15.175 Frontend server not running, unable to setup game session
+18:28:19.065 player 77 (::1) connected
+18:28:19.066 [37m77 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:19.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:19.068 Frontend server not running, unable to setup game session
+18:28:19.119 [37m77 ->[34m {"type":"listStreamers"}
+18:28:19.119 [37m77 <-[32m {"type":"streamerList","ids":[]}
+18:28:19.172 player 77 connection closed: 1005 - 
+18:28:19.172 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:19.174 Frontend server not running, unable to setup game session
+18:28:23.062 player 78 (::1) connected
+18:28:23.063 [37m78 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:23.063 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:23.064 Frontend server not running, unable to setup game session
+18:28:23.117 [37m78 ->[34m {"type":"listStreamers"}
+18:28:23.117 [37m78 <-[32m {"type":"streamerList","ids":[]}
+18:28:23.171 player 78 connection closed: 1005 - 
+18:28:23.171 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:23.173 Frontend server not running, unable to setup game session
+18:28:27.065 player 79 (::1) connected
+18:28:27.066 [37m79 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:27.066 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:27.067 Frontend server not running, unable to setup game session
+18:28:27.118 [37m79 ->[34m {"type":"listStreamers"}
+18:28:27.118 [37m79 <-[32m {"type":"streamerList","ids":[]}
+18:28:27.172 player 79 connection closed: 1005 - 
+18:28:27.172 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:27.174 Frontend server not running, unable to setup game session
+18:28:31.059 player 80 (::1) connected
+18:28:31.060 [37m80 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:31.060 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:31.062 Frontend server not running, unable to setup game session
+18:28:31.113 [37m80 ->[34m {"type":"listStreamers"}
+18:28:31.113 [37m80 <-[32m {"type":"streamerList","ids":[]}
+18:28:31.167 player 80 connection closed: 1005 - 
+18:28:31.167 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:31.169 Frontend server not running, unable to setup game session
+18:28:35.121 player 81 (::1) connected
+18:28:35.122 [37m81 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:35.122 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:35.124 Frontend server not running, unable to setup game session
+18:28:35.174 [37m81 ->[34m {"type":"listStreamers"}
+18:28:35.174 [37m81 <-[32m {"type":"streamerList","ids":[]}
+18:28:35.228 player 81 connection closed: 1005 - 
+18:28:35.228 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:35.231 Frontend server not running, unable to setup game session
+18:28:39.059 player 82 (::1) connected
+18:28:39.060 [37m82 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:39.060 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:39.061 Frontend server not running, unable to setup game session
+18:28:39.113 [37m82 ->[34m {"type":"listStreamers"}
+18:28:39.113 [37m82 <-[32m {"type":"streamerList","ids":[]}
+18:28:39.171 player 82 connection closed: 1005 - 
+18:28:39.171 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:39.173 Frontend server not running, unable to setup game session
+18:28:43.070 player 83 (::1) connected
+18:28:43.071 [37m83 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:43.071 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:43.072 Frontend server not running, unable to setup game session
+18:28:43.126 [37m83 ->[34m {"type":"listStreamers"}
+18:28:43.127 [37m83 <-[32m {"type":"streamerList","ids":[]}
+18:28:43.184 player 83 connection closed: 1005 - 
+18:28:43.185 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:43.187 Frontend server not running, unable to setup game session
+18:28:47.052 player 84 (::1) connected
+18:28:47.053 [37m84 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:47.053 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:47.054 Frontend server not running, unable to setup game session
+18:28:47.105 [37m84 ->[34m {"type":"listStreamers"}
+18:28:47.106 [37m84 <-[32m {"type":"streamerList","ids":[]}
+18:28:47.159 player 84 connection closed: 1005 - 
+18:28:47.159 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:47.161 Frontend server not running, unable to setup game session
+18:28:51.058 player 85 (::1) connected
+18:28:51.059 [37m85 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:51.059 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:51.060 Frontend server not running, unable to setup game session
+18:28:51.111 [37m85 ->[34m {"type":"listStreamers"}
+18:28:51.111 [37m85 <-[32m {"type":"streamerList","ids":[]}
+18:28:51.167 player 85 connection closed: 1005 - 
+18:28:51.167 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:51.169 Frontend server not running, unable to setup game session
+18:28:55.073 player 86 (::1) connected
+18:28:55.074 [37m86 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:55.074 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:55.075 Frontend server not running, unable to setup game session
+18:28:55.126 [37m86 ->[34m {"type":"listStreamers"}
+18:28:55.127 [37m86 <-[32m {"type":"streamerList","ids":[]}
+18:28:55.180 player 86 connection closed: 1005 - 
+18:28:55.180 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:55.182 Frontend server not running, unable to setup game session
+18:28:59.081 player 87 (::1) connected
+18:28:59.082 [37m87 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:28:59.082 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:28:59.083 Frontend server not running, unable to setup game session
+18:28:59.152 [37m87 ->[34m {"type":"listStreamers"}
+18:28:59.153 [37m87 <-[32m {"type":"streamerList","ids":[]}
+18:28:59.219 player 87 connection closed: 1005 - 
+18:28:59.220 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:28:59.222 Frontend server not running, unable to setup game session
+18:29:03.060 player 88 (::1) connected
+18:29:03.061 [37m88 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:03.061 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:03.062 Frontend server not running, unable to setup game session
+18:29:03.115 [37m88 ->[34m {"type":"listStreamers"}
+18:29:03.115 [37m88 <-[32m {"type":"streamerList","ids":[]}
+18:29:03.170 player 88 connection closed: 1005 - 
+18:29:03.170 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:03.172 Frontend server not running, unable to setup game session
+18:29:06.241 player 89 (::1) connected
+18:29:06.242 [37m89 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:06.242 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:06.243 Frontend server not running, unable to setup game session
+18:29:06.311 [37m89 ->[34m {"type":"listStreamers"}
+18:29:06.311 [37m89 <-[32m {"type":"streamerList","ids":[]}
+18:29:06.364 player 89 connection closed: 1005 - 
+18:29:06.364 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:06.366 Frontend server not running, unable to setup game session
+18:29:09.422 player 90 (::1) connected
+18:29:09.423 [37m90 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:09.423 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:09.424 Frontend server not running, unable to setup game session
+18:29:09.475 [37m90 ->[34m {"type":"listStreamers"}
+18:29:09.475 [37m90 <-[32m {"type":"streamerList","ids":[]}
+18:29:09.529 player 90 connection closed: 1005 - 
+18:29:09.529 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:09.532 Frontend server not running, unable to setup game session
+18:29:12.598 player 91 (::1) connected
+18:29:12.599 [37m91 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:12.599 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:12.600 Frontend server not running, unable to setup game session
+18:29:12.651 [37m91 ->[34m {"type":"listStreamers"}
+18:29:12.651 [37m91 <-[32m {"type":"streamerList","ids":[]}
+18:29:12.705 player 91 connection closed: 1005 - 
+18:29:12.705 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:12.707 Frontend server not running, unable to setup game session
+18:29:15.770 player 92 (::1) connected
+18:29:15.771 [37m92 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:15.771 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:15.772 Frontend server not running, unable to setup game session
+18:29:15.824 [37m92 ->[34m {"type":"listStreamers"}
+18:29:15.824 [37m92 <-[32m {"type":"streamerList","ids":[]}
+18:29:15.878 player 92 connection closed: 1005 - 
+18:29:15.878 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:15.879 Frontend server not running, unable to setup game session
+18:29:18.945 player 93 (::1) connected
+18:29:18.946 [37m93 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:18.946 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:18.946 Frontend server not running, unable to setup game session
+18:29:18.998 [37m93 ->[34m {"type":"listStreamers"}
+18:29:18.998 [37m93 <-[32m {"type":"streamerList","ids":[]}
+18:29:19.051 player 93 connection closed: 1005 - 
+18:29:19.051 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:19.052 Frontend server not running, unable to setup game session
+18:29:22.118 player 94 (::1) connected
+18:29:22.119 [37m94 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:22.119 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:22.120 Frontend server not running, unable to setup game session
+18:29:22.171 [37m94 ->[34m {"type":"listStreamers"}
+18:29:22.171 [37m94 <-[32m {"type":"streamerList","ids":[]}
+18:29:22.224 player 94 connection closed: 1005 - 
+18:29:22.224 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:22.226 Frontend server not running, unable to setup game session
+18:29:25.286 player 95 (::1) connected
+18:29:25.287 [37m95 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:25.288 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:25.289 Frontend server not running, unable to setup game session
+18:29:25.340 [37m95 ->[34m {"type":"listStreamers"}
+18:29:25.340 [37m95 <-[32m {"type":"streamerList","ids":[]}
+18:29:25.393 player 95 connection closed: 1005 - 
+18:29:25.393 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:25.396 Frontend server not running, unable to setup game session
+18:29:28.459 player 96 (::1) connected
+18:29:28.460 [37m96 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:28.460 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:28.461 Frontend server not running, unable to setup game session
+18:29:28.512 [37m96 ->[34m {"type":"listStreamers"}
+18:29:28.512 [37m96 <-[32m {"type":"streamerList","ids":[]}
+18:29:28.565 player 96 connection closed: 1005 - 
+18:29:28.565 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:28.567 Frontend server not running, unable to setup game session
+18:29:31.640 player 97 (::1) connected
+18:29:31.641 [37m97 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:31.641 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:31.642 Frontend server not running, unable to setup game session
+18:29:31.692 [37m97 ->[34m {"type":"listStreamers"}
+18:29:31.692 [37m97 <-[32m {"type":"streamerList","ids":[]}
+18:29:31.746 player 97 connection closed: 1005 - 
+18:29:31.746 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:31.749 Frontend server not running, unable to setup game session
+18:29:34.815 player 98 (::1) connected
+18:29:34.816 [37m98 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:34.816 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:34.817 Frontend server not running, unable to setup game session
+18:29:34.869 [37m98 ->[34m {"type":"listStreamers"}
+18:29:34.869 [37m98 <-[32m {"type":"streamerList","ids":[]}
+18:29:34.922 player 98 connection closed: 1005 - 
+18:29:34.922 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:34.924 Frontend server not running, unable to setup game session
+18:29:38.008 player 99 (::1) connected
+18:29:38.008 [37m99 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:38.008 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:38.009 Frontend server not running, unable to setup game session
+18:29:38.061 [37m99 ->[34m {"type":"listStreamers"}
+18:29:38.061 [37m99 <-[32m {"type":"streamerList","ids":[]}
+18:29:38.114 player 99 connection closed: 1005 - 
+18:29:38.114 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:38.115 Frontend server not running, unable to setup game session
+18:29:41.169 player 100 (::1) connected
+18:29:41.170 [37m100 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:41.170 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:41.172 Frontend server not running, unable to setup game session
+18:29:41.223 [37m100 ->[34m {"type":"listStreamers"}
+18:29:41.223 [37m100 <-[32m {"type":"streamerList","ids":[]}
+18:29:41.276 player 100 connection closed: 1005 - 
+18:29:41.276 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:41.278 Frontend server not running, unable to setup game session
+18:29:44.336 player 101 (::1) connected
+18:29:44.337 [37m101 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:44.337 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:44.338 Frontend server not running, unable to setup game session
+18:29:44.389 [37m101 ->[34m {"type":"listStreamers"}
+18:29:44.390 [37m101 <-[32m {"type":"streamerList","ids":[]}
+18:29:44.442 player 101 connection closed: 1005 - 
+18:29:44.442 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:44.444 Frontend server not running, unable to setup game session
+18:29:47.501 player 102 (::1) connected
+18:29:47.502 [37m102 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:47.502 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:47.503 Frontend server not running, unable to setup game session
+18:29:47.557 [37m102 ->[34m {"type":"listStreamers"}
+18:29:47.557 [37m102 <-[32m {"type":"streamerList","ids":[]}
+18:29:47.611 player 102 connection closed: 1005 - 
+18:29:47.611 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:47.612 Frontend server not running, unable to setup game session
+18:29:50.682 player 103 (::1) connected
+18:29:50.683 [37m103 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:50.683 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:50.684 Frontend server not running, unable to setup game session
+18:29:50.736 [37m103 ->[34m {"type":"listStreamers"}
+18:29:50.737 [37m103 <-[32m {"type":"streamerList","ids":[]}
+18:29:50.790 player 103 connection closed: 1005 - 
+18:29:50.790 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:50.792 Frontend server not running, unable to setup game session
+18:29:53.847 player 104 (::1) connected
+18:29:53.848 [37m104 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:53.848 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:53.849 Frontend server not running, unable to setup game session
+18:29:53.900 [37m104 ->[34m {"type":"listStreamers"}
+18:29:53.900 [37m104 <-[32m {"type":"streamerList","ids":[]}
+18:29:53.953 player 104 connection closed: 1005 - 
+18:29:53.953 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:53.954 Frontend server not running, unable to setup game session
+18:29:56.565 player 105 (::1) connected
+18:29:56.566 [37m105 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:29:56.566 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:29:56.567 Frontend server not running, unable to setup game session
+18:29:56.619 [37m105 ->[34m {"type":"listStreamers"}
+18:29:56.620 [37m105 <-[32m {"type":"streamerList","ids":[]}
+18:29:56.672 player 105 connection closed: 1005 - 
+18:29:56.673 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:29:56.675 Frontend server not running, unable to setup game session
+18:30:00.060 player 106 (::1) connected
+18:30:00.061 [37m106 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:00.061 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:00.062 Frontend server not running, unable to setup game session
+18:30:00.113 [37m106 ->[34m {"type":"listStreamers"}
+18:30:00.113 [37m106 <-[32m {"type":"streamerList","ids":[]}
+18:30:00.166 player 106 connection closed: 1005 - 
+18:30:00.166 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:00.168 Frontend server not running, unable to setup game session
+18:30:04.064 player 107 (::1) connected
+18:30:04.065 [37m107 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:04.065 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:04.066 Frontend server not running, unable to setup game session
+18:30:04.117 [37m107 ->[34m {"type":"listStreamers"}
+18:30:04.117 [37m107 <-[32m {"type":"streamerList","ids":[]}
+18:30:04.171 player 107 connection closed: 1005 - 
+18:30:04.171 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:04.173 Frontend server not running, unable to setup game session
+18:30:08.066 player 108 (::1) connected
+18:30:08.067 [37m108 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:08.067 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:08.068 Frontend server not running, unable to setup game session
+18:30:08.119 [37m108 ->[34m {"type":"listStreamers"}
+18:30:08.119 [37m108 <-[32m {"type":"streamerList","ids":[]}
+18:30:08.173 player 108 connection closed: 1005 - 
+18:30:08.173 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:08.175 Frontend server not running, unable to setup game session
+18:30:12.063 player 109 (::1) connected
+18:30:12.064 [37m109 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:12.064 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:12.065 Frontend server not running, unable to setup game session
+18:30:12.116 [37m109 ->[34m {"type":"listStreamers"}
+18:30:12.116 [37m109 <-[32m {"type":"streamerList","ids":[]}
+18:30:12.170 player 109 connection closed: 1005 - 
+18:30:12.170 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:12.171 Frontend server not running, unable to setup game session
+18:30:16.051 player 110 (::1) connected
+18:30:16.052 [37m110 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:16.052 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:16.053 Frontend server not running, unable to setup game session
+18:30:16.104 [37m110 ->[34m {"type":"listStreamers"}
+18:30:16.104 [37m110 <-[32m {"type":"streamerList","ids":[]}
+18:30:16.157 player 110 connection closed: 1005 - 
+18:30:16.158 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:16.160 Frontend server not running, unable to setup game session
+18:30:20.069 player 111 (::1) connected
+18:30:20.070 [37m111 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:20.070 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:20.071 Frontend server not running, unable to setup game session
+18:30:20.123 [37m111 ->[34m {"type":"listStreamers"}
+18:30:20.123 [37m111 <-[32m {"type":"streamerList","ids":[]}
+18:30:20.177 player 111 connection closed: 1005 - 
+18:30:20.177 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:20.179 Frontend server not running, unable to setup game session
+18:30:24.063 player 112 (::1) connected
+18:30:24.064 [37m112 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:24.064 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:24.065 Frontend server not running, unable to setup game session
+18:30:24.116 [37m112 ->[34m {"type":"listStreamers"}
+18:30:24.116 [37m112 <-[32m {"type":"streamerList","ids":[]}
+18:30:24.170 player 112 connection closed: 1005 - 
+18:30:24.170 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:24.172 Frontend server not running, unable to setup game session
+18:30:28.063 player 113 (::1) connected
+18:30:28.064 [37m113 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:28.064 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:28.065 Frontend server not running, unable to setup game session
+18:30:28.117 [37m113 ->[34m {"type":"listStreamers"}
+18:30:28.117 [37m113 <-[32m {"type":"streamerList","ids":[]}
+18:30:28.170 player 113 connection closed: 1005 - 
+18:30:28.170 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:28.172 Frontend server not running, unable to setup game session
+18:30:32.052 player 114 (::1) connected
+18:30:32.053 [37m114 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:30:32.053 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:30:32.054 Frontend server not running, unable to setup game session
+18:30:32.105 [37m114 ->[34m {"type":"listStreamers"}
+18:30:32.105 [37m114 <-[32m {"type":"streamerList","ids":[]}
+18:30:32.159 player 114 connection closed: 1005 - 
+18:30:32.159 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:30:32.162 Frontend server not running, unable to setup game session

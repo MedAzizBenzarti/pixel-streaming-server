@@ -1,0 +1,15 @@
+{
+  "name": "pixel-streaming-server",
+  "version": "1.0.0",
+  "main": "cirrus.js",
+  "scripts": {
+    "start": "node cirrus.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "hsts": "^2.2.0",
+    "ws": "^8.13.0",
+    "yargs": "^17.7.2"
+  }
+}

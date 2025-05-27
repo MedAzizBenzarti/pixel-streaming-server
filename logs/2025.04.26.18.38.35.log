@@ -1,0 +1,52 @@
+18:38:35.882 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "0.0.0.0",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+18:38:35.908 No peerConnectionConfig
+18:38:35.948 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+18:38:35.956 WebSocket listening for Streamer connections on :8888
+18:38:35.957 WebSocket listening for SFU connections on :8889
+18:38:35.958 WebSocket listening for Players connections on :80
+18:38:35.961 Http listening on *: 80
+18:38:35.964 Frontend server not running, unable to setup game session
+18:38:43.666 player 1 (::1) connected
+18:38:43.668 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+18:38:43.668 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:38:43.669 Frontend server not running, unable to setup game session
+18:38:43.739 [37m1 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 285691999912192808 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:38:43.740 Player 1 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!
+18:38:53.772 player 1 connection closed: 1001 - 
+18:38:53.772 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:38:53.775 Frontend server not running, unable to setup game session
+18:38:53.832 player 2 (::1) connected
+18:38:53.832 [37m2 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+18:38:53.833 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:38:53.834 Frontend server not running, unable to setup game session
+18:38:53.888 [37m2 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 3400231960720590489 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:38:53.888 Player 2 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!
+18:39:27.783 player 2 connection closed: 1001 - 
+18:39:27.783 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:39:27.786 Frontend server not running, unable to setup game session
+18:39:27.850 player 3 (::1) connected
+18:39:27.851 [37m3 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+18:39:27.851 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:39:27.852 Frontend server not running, unable to setup game session
+18:39:27.907 [37m3 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 7637576911736154578 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:39:27.907 Player 3 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!

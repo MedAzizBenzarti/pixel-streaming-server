@@ -1,0 +1,35 @@
+07:00:57.278 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+07:00:57.362 No peerConnectionConfig
+07:00:57.372 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+07:00:57.403 WebSocket listening for Streamer connections on :8888
+07:00:57.407 WebSocket listening for SFU connections on :8889
+07:00:57.409 WebSocket listening for Players connections on :80
+07:00:57.416 Http listening on *: 80
+07:01:54.813 Streamer connected: ::ffff:127.0.0.1
+07:01:54.819 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+07:01:54.822 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+07:01:59.834 Registered new streamer: __LEGACY_STREAMER__0
+07:02:37.293 [37m__LEGACY_STREAMER__0 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+07:02:37.298 Registered new streamer: DefaultStreamer
+07:04:47.377 [37mDefaultStreamer ->[34m {"type":"ping","time":1736996687}
+07:06:25.036 [37mDefaultStreamer ->[34m {"type":"ping","time":1736996785}

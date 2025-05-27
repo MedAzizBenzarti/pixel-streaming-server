@@ -1,0 +1,58 @@
+06:27:07.454 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+06:27:07.558 No peerConnectionConfig
+06:27:07.577 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+06:27:07.622 WebSocket listening for Streamer connections on :8888
+06:27:07.630 WebSocket listening for SFU connections on :8889
+06:27:07.632 WebSocket listening for Players connections on :80
+06:27:07.639 Http listening on *: 80
+06:27:09.329 Streamer connected: ::ffff:127.0.0.1
+06:27:09.331 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:27:09.332 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+06:27:09.448 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+06:27:09.449 Registered new streamer: DefaultStreamer
+06:27:18.570 player 1 (::1) connected
+06:27:18.570 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:27:18.571 [37m[players] <-[32m {"type":"playerCount","count":1}
+06:28:09.513 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994489}
+06:28:49.917 player 1 connection closed: 1001 - 
+06:28:49.920 [37m[players] <-[32m {"type":"playerCount","count":0}
+06:29:09.396 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994549}
+06:30:09.450 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994609}
+06:30:44.254 player 2 (::1) connected
+06:30:44.256 [37m2 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:30:44.258 [37m[players] <-[32m {"type":"playerCount","count":1}
+06:31:09.416 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994669}
+06:32:09.464 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994729}
+06:33:09.498 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994789}
+06:34:09.381 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994849}
+06:34:27.780 streamer DefaultStreamer disconnected: 1006 - 
+06:34:27.780 unsubscribing all players on DefaultStreamer
+06:37:17.171 Streamer connected: ::ffff:127.0.0.1
+06:37:17.175 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:37:17.187 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+06:37:22.729 Registered new streamer: __LEGACY_STREAMER__0
+06:37:25.161 [37m__LEGACY_STREAMER__0 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+06:37:25.164 Registered new streamer: DefaultStreamer
+06:38:01.732 player 2 connection closed: 1001 - 
+06:38:01.736 [37m[players] <-[32m {"type":"playerCount","count":0}
+06:38:24.363 Unable to locate file player.html

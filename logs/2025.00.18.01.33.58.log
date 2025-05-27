@@ -1,0 +1,53 @@
+01:33:58.918 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+01:33:59.104 No peerConnectionConfig
+01:33:59.272 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+01:33:59.323 WebSocket listening for Streamer connections on :8888
+01:33:59.329 WebSocket listening for SFU connections on :8889
+01:33:59.333 WebSocket listening for Players connections on :80
+01:33:59.343 Http listening on *: 80
+01:33:59.355 Frontend server not running, unable to setup game session
+01:34:00.314 Streamer connected: ::1
+01:34:00.317 [37m::1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:34:00.321 [37m::1 <-[32m {"type":"identify"}
+01:34:00.399 [37m::1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+01:34:00.400 Registered new streamer: DefaultStreamer
+01:34:08.715 Streamer connected: ::ffff:127.0.0.1
+01:34:08.716 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:34:08.717 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:34:10.366 streamer ::ffff:127.0.0.1 disconnected: 1001 - 
+01:34:10.391 Streamer connected: ::ffff:127.0.0.1
+01:34:10.394 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:34:10.396 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:34:15.413 Registered new streamer: __LEGACY_STREAMER__0
+01:35:00.423 [37mDefaultStreamer ->[34m {"type":"ping","time":1737149700}
+01:36:00.440 [37mDefaultStreamer ->[34m {"type":"ping","time":1737149760}
+01:36:30.565 streamer __LEGACY_STREAMER__0 disconnected: 1001 - 
+01:36:30.569 unsubscribing all players on __LEGACY_STREAMER__0
+01:36:30.579 Streamer connected: ::ffff:127.0.0.1
+01:36:30.581 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:36:30.616 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:36:32.196 streamer ::ffff:127.0.0.1 disconnected: 1001 - 
+01:36:32.199 Streamer connected: ::ffff:127.0.0.1
+01:36:32.199 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:36:32.200 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:36:37.210 Registered new streamer: __LEGACY_STREAMER__1

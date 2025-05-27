@@ -1,0 +1,30 @@
+20:14:57.057 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": true,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "fl.ngrok.app",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true,
+	"peerConnectionOptions": "{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]},{\"urls\":\"turn:your.turn.server:3478\",\"username\":\"user\",\"credential\":\"pass\"}]}"
+}
+20:14:57.100 peerConnectionOptions = {"iceServers":[{"urls":["stun:stun.l.google.com:19302"]},{"urls":"turn:your.turn.server:3478","username":"user","credential":"pass"}]}
+20:14:57.101 Redirecting http->https
+20:14:57.105 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+20:14:57.115 WebSocket listening for Streamer connections on :8888
+20:14:57.116 WebSocket listening for SFU connections on :8889
+20:14:57.117 WebSocket listening for Players connections on :80
+20:14:57.118 Http listening on *: 80
+20:14:57.119 Https listening on *: 443

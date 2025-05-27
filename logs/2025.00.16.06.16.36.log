@@ -1,0 +1,42 @@
+06:16:36.544 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "localhost",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+06:16:36.651 No peerConnectionConfig
+06:16:36.666 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+06:16:36.703 WebSocket listening for Streamer connections on :8888
+06:16:36.710 WebSocket listening for SFU connections on :8889
+06:16:36.712 WebSocket listening for Players connections on :80
+06:16:36.716 Http listening on *: 80
+06:16:36.935 Streamer connected: ::ffff:127.0.0.1
+06:16:36.936 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+06:16:36.937 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+06:16:37.035 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"DefaultStreamer"}
+06:16:37.036 Registered new streamer: DefaultStreamer
+06:17:37.300 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993857}
+06:18:37.023 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993917}
+06:19:37.061 [37mDefaultStreamer ->[34m {"type":"ping","time":1736993977}
+06:20:37.244 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994037}
+06:21:37.059 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994097}
+06:22:37.086 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994157}
+06:23:37.093 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994217}
+06:24:37.030 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994277}
+06:25:37.044 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994337}
+06:26:37.020 [37mDefaultStreamer ->[34m {"type":"ping","time":1736994397}

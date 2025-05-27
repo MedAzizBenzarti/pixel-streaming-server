@@ -1,0 +1,28 @@
+19:51:52.541 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+19:51:52.651 No peerConnectionConfig
+19:51:52.839 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+19:51:52.878 WebSocket listening for Streamer connections on :8888
+19:51:52.882 WebSocket listening for SFU connections on :8889
+19:51:52.884 WebSocket listening for Players connections on :80
+19:51:52.891 Http listening on *: 80
+19:51:52.922 Frontend server not running, unable to setup game session

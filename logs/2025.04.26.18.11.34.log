@@ -1,0 +1,56 @@
+18:11:34.891 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "0.0.0.0",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+18:11:34.916 No peerConnectionConfig
+18:11:34.953 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+18:11:34.959 WebSocket listening for Streamer connections on :8888
+18:11:34.960 WebSocket listening for SFU connections on :8889
+18:11:34.960 WebSocket listening for Players connections on :80
+18:11:34.962 Http listening on *: 80
+18:11:34.964 Frontend server not running, unable to setup game session
+18:11:49.236 player 1 (::1) connected
+18:11:49.238 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:11:49.239 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:11:49.241 Frontend server not running, unable to setup game session
+18:11:49.300 player 2 (::1) connected
+18:11:49.302 [37m2 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:11:49.302 [37m[players] <-[32m {"type":"playerCount","count":2}
+18:11:49.304 Frontend server not running, unable to setup game session
+18:11:49.354 [37m2 ->[34m {"type":"listStreamers"}
+18:11:49.354 [37m2 <-[32m {"type":"streamerList","ids":[]}
+18:11:49.375 [37m1 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 5300062197277825325 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:11:49.375 Player 1 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!
+18:11:51.999 [37m2 ->[34m {"type":"listStreamers"}
+18:11:51.999 [37m2 <-[32m {"type":"streamerList","ids":[]}
+18:11:55.006 [37m2 ->[34m {"type":"listStreamers"}
+18:11:55.006 [37m2 <-[32m {"type":"streamerList","ids":[]}
+18:11:55.073 player 2 connection closed: 1005 - 
+18:11:55.073 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:11:55.076 Frontend server not running, unable to setup game session
+18:11:58.834 player 1 connection closed: 1001 - 
+18:11:58.834 [37m[players] <-[32m {"type":"playerCount","count":0}
+18:11:58.836 Frontend server not running, unable to setup game session
+18:11:59.108 player 3 (::1) connected
+18:11:59.109 [37m3 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}}"
+18:11:59.109 [37m[players] <-[32m {"type":"playerCount","count":1}
+18:11:59.111 Frontend server not running, unable to setup game session
+18:11:59.261 [37m3 -> undefined[36m {"type":"offer","sdp":"v=0\r\no=- 6857952323938758272 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\n"}
+18:11:59.262 Player 3 attempted to send an outgoing message without having subscribed first. No streamer connected so this message isn't going anywhere!

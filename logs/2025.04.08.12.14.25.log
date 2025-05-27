@@ -1,0 +1,41 @@
+12:14:25.074 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "192.168.15.225",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+12:14:25.099 No peerConnectionConfig
+12:14:25.135 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+12:14:25.143 WebSocket listening for Streamer connections on :8888
+12:14:25.144 WebSocket listening for SFU connections on :8889
+12:14:25.145 WebSocket listening for Players connections on :80
+12:14:25.146 Http listening on *: 80
+12:14:25.148 Frontend server not running, unable to setup game session
+12:57:46.534 player 1 (::ffff:192.168.15.225) connected
+12:57:46.538 [37m1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+12:57:46.539 [37m[players] <-[32m {"type":"playerCount","count":1}
+12:57:46.541 [37m1 ->[34m {"type":"listStreamers"}
+12:57:46.541 [37m1 <-[32m {"type":"streamerList","ids":[]}
+12:57:46.544 Frontend server not running, unable to setup game session
+12:57:48.550 [37m1 ->[34m {"type":"listStreamers"}
+12:57:48.551 [37m1 <-[32m {"type":"streamerList","ids":[]}
+12:57:50.553 [37m1 ->[34m {"type":"listStreamers"}
+12:57:50.553 [37m1 <-[32m {"type":"streamerList","ids":[]}
+12:57:50.555 player 1 connection closed: 1005 - 
+12:57:50.556 [37m[players] <-[32m {"type":"playerCount","count":0}
+12:57:50.560 Frontend server not running, unable to setup game session

@@ -1,0 +1,58 @@
+11:09:52.443 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+11:09:53.171 No peerConnectionConfig
+11:09:53.266 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+11:09:53.351 WebSocket listening for Streamer connections on :8888
+11:09:53.352 WebSocket listening for SFU connections on :8889
+11:09:53.353 WebSocket listening for Players connections on :80
+11:09:53.354 Http listening on *: 80
+11:09:53.356 Frontend server not running, unable to setup game session
+11:17:03.093 Streamer connected: ::ffff:127.0.0.1
+11:17:03.093 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+11:17:03.095 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+11:17:03.179 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"Editor"}
+11:17:03.179 Registered new streamer: Editor
+11:17:22.868 Streamer connected: ::ffff:127.0.0.1
+11:17:22.868 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+11:17:22.868 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+11:17:27.056 streamer ::ffff:127.0.0.1 disconnected: 1001 - 
+11:17:27.057 Streamer connected: ::ffff:127.0.0.1
+11:17:27.057 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+11:17:27.057 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+11:17:32.060 Registered new streamer: __LEGACY_STREAMER__0
+11:17:37.707 streamer Editor disconnected: 1000 - 
+11:17:37.708 unsubscribing all players on Editor
+11:17:49.947 Streamer connected: ::ffff:127.0.0.1
+11:17:49.947 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+11:17:49.947 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+11:17:50.036 [37m::ffff:127.0.0.1 ->[34m {"type":"endpointId","id":"Editor"}
+11:17:50.037 Registered new streamer: Editor
+11:18:06.520 streamer __LEGACY_STREAMER__0 disconnected: 1001 - 
+11:18:06.520 unsubscribing all players on __LEGACY_STREAMER__0
+11:18:06.525 Streamer connected: ::ffff:127.0.0.1
+11:18:06.525 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+11:18:06.525 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+11:18:11.539 Registered new streamer: __LEGACY_STREAMER__1
+11:19:21.648 streamer Editor disconnected: 1000 - 
+11:19:21.648 unsubscribing all players on Editor
+11:20:25.195 streamer __LEGACY_STREAMER__1 disconnected: 1001 - 
+11:20:25.195 unsubscribing all players on __LEGACY_STREAMER__1

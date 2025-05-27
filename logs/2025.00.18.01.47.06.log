@@ -1,0 +1,34 @@
+01:47:06.079 Config: {
+	"UseFrontend": true,
+	"UseMatchmaker": false,
+	"UseHTTPS": false,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "player.html",
+	"AdditionalRoutes": {},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "127.0.0.1",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true
+}
+01:47:06.197 No peerConnectionConfig
+01:47:06.287 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+01:47:06.316 WebSocket listening for Streamer connections on :8888
+01:47:06.320 WebSocket listening for SFU connections on :8889
+01:47:06.322 WebSocket listening for Players connections on :80
+01:47:06.325 Http listening on *: 80
+01:47:06.333 Frontend server not running, unable to setup game session
+01:47:24.946 Streamer connected: ::ffff:127.0.0.1
+01:47:24.947 [37m::ffff:127.0.0.1 <-[32m "{\"type\":\"config\",\"peerConnectionOptions\":{}}"
+01:47:24.948 [37m::ffff:127.0.0.1 <-[32m {"type":"identify"}
+01:47:29.964 Registered new streamer: __LEGACY_STREAMER__0
+01:51:05.283 streamer __LEGACY_STREAMER__0 disconnected: 1006 - 
+01:51:05.290 unsubscribing all players on __LEGACY_STREAMER__0

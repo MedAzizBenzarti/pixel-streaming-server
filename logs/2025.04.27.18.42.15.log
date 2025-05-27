@@ -1,0 +1,33 @@
+18:42:15.448 Config: {
+	"UseFrontend": false,
+	"UseMatchmaker": false,
+	"UseHTTPS": true,
+	"HTTPSCertFile": "./certificates/client-cert.pem",
+	"HTTPSKeyFile": "./certificates/client-key.pem",
+	"LogToFile": true,
+	"LogVerbose": true,
+	"HomepageFile": "public_html/player.html",
+	"AdditionalRoutes": {
+		"/": "public_html"
+	},
+	"EnableWebserver": true,
+	"MatchmakerAddress": "",
+	"MatchmakerPort": 9999,
+	"PublicIp": "fl.ngrok.app",
+	"HttpPort": 80,
+	"HttpsPort": 443,
+	"StreamerPort": 8888,
+	"SFUPort": 8889,
+	"MaxPlayerCount": -1,
+	"DisableSSLCert": true,
+	"peerConnectionOptions": "{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]},{\"urls\":[\"turn:openrelay.metered.ca:80\",\"turn:openrelay.metered.ca:443\"],\"username\":\"openrelayproject\",\"credential\":\"openrelaypass\"}]}"
+}
+18:42:15.496 peerConnectionOptions = {"iceServers":[{"urls":["stun:stun.l.google.com:19302"]},{"urls":["turn:openrelay.metered.ca:80","turn:openrelay.metered.ca:443"],"username":"openrelayproject","credential":"openrelaypass"}]}
+18:42:15.497 Redirecting http->https
+18:42:15.498 Adding additional routes "/" -> "public_html"
+18:42:15.501 Running Cirrus - The Pixel Streaming reference implementation signalling server for Unreal Engine 5.3.
+18:42:15.509 WebSocket listening for Streamer connections on :8888
+18:42:15.510 WebSocket listening for SFU connections on :8889
+18:42:15.511 WebSocket listening for Players connections on :80
+18:42:15.511 Http listening on *: 80
+18:42:15.511 Https listening on *: 443
