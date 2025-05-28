@@ -56,7 +56,10 @@
 
       pc.ontrack = ({ streams }) => { video.srcObject = streams[0]; log('Stream received'); };
 
-      pc.addTransceiver('video', { direction: 'recvonly' });
+      pc.addTransceiver("video", {
+        direction: "recvonly",
+        sendEncodings: [{ rid: "h", maxBitrate: 300000 }],
+      });
 
       pc.createOffer().then(offer => {
         pc.setLocalDescription(offer);
