@@ -24,12 +24,8 @@ if (config.EnableWebserver) {
   });
 }
 
-const server = config.UseHTTPS
-  ? https.createServer({
-      key: fs.readFileSync(config.HTTPSKeyFile),
-      cert: fs.readFileSync(config.HTTPSCertFile),
-    }, app)
-  : http.createServer(app);
+const server = http.createServer(app);
+
 
 const wss = new WebSocket.Server({ server });
 

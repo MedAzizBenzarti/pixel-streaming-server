@@ -1,5 +1,5 @@
 {
-    "UseHTTPS": true,
+    "UseHTTPS": false,
     "HTTPSCertFile": "./certificates/client-key.pem",
     "HTTPSKeyFile": "./certificates/client-cert.pem",
     "HttpPort": 10000,
