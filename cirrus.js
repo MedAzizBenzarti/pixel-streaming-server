@@ -1,57 +1,103 @@
-// cirrus.js - Minimal WebRTC Signalling Server for Pixel Streaming
+// cirrus.js - Pixel Streaming Signalling Server
 
-const express = require('express');
-const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const http = require('http');
+const https = require('https');
 const WebSocket = require('ws');
 const yargs = require('yargs');
 
 const argv = yargs.argv;
-const configPath = argv.configFile || './config.json';
-const config = JSON.parse(fs.readFileSync(configPath));
+const config = JSON.parse(fs.readFileSync(argv.configFile || './config.json'));
 
 const app = express();
 
+// Serve static files
 if (config.EnableWebserver) {
   for (const route in config.AdditionalRoutes) {
-    const staticPath = path.join(__dirname, config.AdditionalRoutes[route]);
-    app.use(route, express.static(staticPath));
+    const routePath = path.join(__dirname, config.AdditionalRoutes[route]);
+    app.use(route, express.static(routePath));
   }
 
   app.get('/', (req, res) => {
-    const homepagePath = path.join(__dirname, config.HomepageFile);
-    if (fs.existsSync(homepagePath)) {
-      res.sendFile(homepagePath);
-    } else {
-      res.status(404).send('Homepage not found');
-    }
+    const homepage = path.join(__dirname, config.HomepageFile);
+    res.sendFile(fs.existsSync(homepage) ? homepage : '404 Not Found');
   });
 }
 
-const server = http.createServer(app);
+// HTTPS or HTTP server
+const server = config.UseHTTPS
+  ? https.createServer(
+      {
+        cert: fs.readFileSync(config.HTTPSCertFile),
+        key: fs.readFileSync(config.HTTPSKeyFile),
+      },
+      app
+    )
+  : http.createServer(app);
 
-// ✅ FIXED: attach WebSocket server to HTTP server
-const wss = new WebSocket.Server({ server });
+// WebSocket servers
+const streamerWSS = new WebSocket.Server({ noServer: true });
+const playerWSS = new WebSocket.Server({ noServer: true });
 
-wss.on('connection', (ws) => {
-  console.log('WebSocket client connected');
+let streamer = null;
+const players = new Set();
 
-  ws.on('message', async (message) => {
-    let msg;
-    try {
-      msg = JSON.parse(message);
-    } catch (err) {
-      console.error('Invalid JSON:', message);
-      return;
+// Routing upgrade requests
+server.on('upgrade', (req, socket, head) => {
+  const pathname = req.url;
+
+  if (pathname === '/streamer') {
+    streamerWSS.handleUpgrade(req, socket, head, ws => {
+      streamerWSS.emit('connection', ws, req);
+    });
+  } else {
+    playerWSS.handleUpgrade(req, socket, head, ws => {
+      playerWSS.emit('connection', ws, req);
+    });
+  }
+});
+
+// Handle streamer connection
+streamerWSS.on('connection', ws => {
+  console.log('[Streamer] connected');
+  streamer = ws;
+
+  ws.on('message', msg => {
+    const data = JSON.parse(msg);
+    console.log('[Streamer] ->', data.type);
+    for (const player of players) {
+      player.send(JSON.stringify(data));
     }
+  });
 
-    console.log('Received:', msg);
-
-    // Forwarding or signaling logic goes here
+  ws.on('close', () => {
+    console.log('[Streamer] disconnected');
+    streamer = null;
   });
 });
 
-server.listen(config.HttpPort, () => {
-  console.log(`HTTP server listening on port ${config.HttpPort}`);
+// Handle player connection
+playerWSS.on('connection', ws => {
+  console.log('[Player] connected');
+  players.add(ws);
+
+  ws.on('message', msg => {
+    const data = JSON.parse(msg);
+    console.log('[Player] ->', data.type);
+    if (streamer && streamer.readyState === WebSocket.OPEN) {
+      streamer.send(JSON.stringify(data));
+    }
+  });
+
+  ws.on('close', () => {
+    console.log('[Player] disconnected');
+    players.delete(ws);
+  });
+});
+
+// Start server
+server.listen(config.HttpsPort || config.HttpPort, () => {
+  console.log(`[Server] Running on port ${config.HttpsPort || config.HttpPort}`);
 });
