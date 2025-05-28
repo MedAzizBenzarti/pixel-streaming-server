@@ -1,128 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pixel Streaming Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Streaming</title>
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    video {
-      width: 100%;
-      max-height: 100vh;
-      background: black;
-    }
-    #status {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 1.5em;
-    }
+    body { margin: 0; background: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
+    #status { position: absolute; top: 20px; width: 100%; text-align: center; font-size: 1.5em; }
+    video { width: 100%; max-height: 100vh; background: black; }
   </style>
 </head>
 <body>
   <div id="status">Connecting...</div>
   <video id="player" autoplay playsinline></video>
-
   <script>
     const status = document.getElementById('status');
     const video = document.getElementById('player');
-
-    const protocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const wsUrl = `${protocol}://${location.host}`;
-
+    const protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+    const wsUrl = `${protocol}://${location.hostname}`;
     let ws, pc;
 
     function log(msg) {
-      status.innerText = msg;
+      status.textContent = msg;
       console.log(msg);
     }
 
     function connectWebSocket() {
-      log("Connecting...");
       ws = new WebSocket(wsUrl);
+      ws.onopen = () => log('WebSocket connected');
+      ws.onclose = () => log('WebSocket closed');
+      ws.onerror = err => log('WebSocket error');
 
-      ws.onopen = () => log("WebSocket connected");
-
-      ws.onerror = (err) => {
-        log("WebSocket error");
-        console.error(err);
-      };
-
-      ws.onclose = () => {
-        log("WebSocket closed. Reconnecting in 3s...");
-        setTimeout(connectWebSocket, 3000);
-      };
-
-      ws.onmessage = async (event) => {
+      ws.onmessage = async ({ data }) => {
         let msg;
-        try {
-          msg = JSON.parse(event.data);
-        } catch (e) {
-          console.error("Invalid message:", event.data);
-          return;
-        }
+        try { msg = JSON.parse(data); } catch (e) { return; }
 
-        if (msg.type === 'config') {
-          log("Received config");
-          startPeerConnection(msg.peerConnectionOptions);
-        } else if (msg.type === 'answer') {
-          log("Received answer");
-          await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
-        } else if (msg.type === 'iceCandidate') {
-          log("Received ICE candidate");
-          try {
-            await pc.addIceCandidate(msg.candidate);
-          } catch (e) {
-            console.error("ICE add error", e);
-          }
-        } else {
-          console.warn("Unknown message type:", msg.type);
-        }
+        if (msg.type === 'config') startPeer(msg.peerConnectionOptions);
+        else if (msg.type === 'answer') await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
+        else if (msg.type === 'iceCandidate') await pc.addIceCandidate(msg.candidate).catch(console.error);
       };
     }
 
-    function startPeerConnection(config) {
-      log("Starting PeerConnection");
+    function startPeer(config) {
+      log('Starting PeerConnection');
+      pc = new RTCPeerConnection(config || {
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: ['turn:openrelay.metered.ca:80','turn:openrelay.metered.ca:443'], username: 'openrelayproject', credential: 'openrelaypass' }
+        ]
+      });
 
-      const rtcConfig = config || {
-        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+      pc.onicecandidate = ({ candidate }) => {
+        if (candidate) ws.send(JSON.stringify({ type: 'iceCandidate', candidate }));
       };
 
-      pc = new RTCPeerConnection(rtcConfig);
+      pc.ontrack = ({ streams }) => { video.srcObject = streams[0]; log('Stream received'); };
 
-      pc.onicecandidate = event => {
-        if (event.candidate) {
-          log("Sending ICE candidate");
-          ws.send(JSON.stringify({ type: "iceCandidate", candidate: event.candidate }));
-        }
-      };
-
-      pc.ontrack = event => {
-        if (event.track.kind === "video") {
-          log("Received video track");
-          video.srcObject = event.streams[0];
-        }
-      };
-
-      pc.addTransceiver("video", { direction: "recvonly" });
+      pc.addTransceiver('video', { direction: 'recvonly' });
 
       pc.createOffer().then(offer => {
         pc.setLocalDescription(offer);
-        ws.send(JSON.stringify({ type: "offer", sdp: offer.sdp }));
-        log("Sent offer");
-      }).catch(err => {
-        log("Offer creation failed");
-        console.error(err);
+        ws.send(JSON.stringify({ type: 'offer', sdp: offer.sdp }));
+        log('Offer sent');
       });
     }
 
