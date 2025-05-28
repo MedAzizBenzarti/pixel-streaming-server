@@ -1,22 +1,11 @@
 {
-    "UseFrontend": true,
-    "UseMatchmaker": false,
-    "UseHTTPS": false,
-    "LogToFile": true,
-    "LogVerbose": true,
-    "HomepageFile": "public_html/player.html",
-    "AdditionalRoutes": {
-      "/": "public_html"
-    },
-    "EnableWebserver": true,
-    "MatchmakerAddress": "",
-    "MatchmakerPort": 9999,
-    "PublicIp": "0.0.0.0",
+    "UseHTTPS": true,
+    "HTTPSCertFile": "./certificates/client-key.pem",
+    "HTTPSKeyFile": "./certificates/client-cert.pem",
     "HttpPort": 10000,
-    "StreamerPort": 8888,
-    "SFUPort": 8889,
-    "MaxPlayerCount": -1,
-    "DisableSSLCert": true,
-    "peerConnectionOptions": "{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]}]}"
+    "HttpsPort": 443,
+    "EnableWebserver": true,
+    "HomepageFile": "public_html/player.html",
+    "AdditionalRoutes": { "/": "public_html" }
   }
   
