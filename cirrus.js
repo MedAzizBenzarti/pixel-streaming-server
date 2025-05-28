@@ -1,5 +1,3 @@
-// cirrus.js - Pixel Streaming Signalling Server (Simplified for Deployment)
-
 const express = require('express');
 const http = require('http');
 const https = require('https');
@@ -44,7 +42,7 @@ const server = config.UseHTTPS
     )
   : http.createServer(app);
 
-const playerWSS = new WebSocket.Server({ server });
+const playerWSS = new WebSocket.Server({ noServer: true });
 const streamerWSS = new WebSocket.Server({ port: config.StreamerPort });
 const sfuWSS = new WebSocket.Server({ port: config.SFUPort });
 
@@ -85,6 +83,18 @@ sfuWSS.on('connection', (ws, req) => {
   ws.on('close', () => {
     console.log(`SFU disconnected`);
   });
+});
+
+server.on('upgrade', function upgrade(request, socket, head) {
+  const { pathname } = require('url').parse(request.url);
+
+  if (pathname === '/playerws') {
+    playerWSS.handleUpgrade(request, socket, head, function done(ws) {
+      playerWSS.emit('connection', ws, request);
+    });
+  } else {
+    socket.destroy();
+  }
 });
 
 server.listen(config.UseHTTPS ? config.HttpsPort : config.HttpPort, () => {

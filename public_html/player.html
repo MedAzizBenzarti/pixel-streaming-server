@@ -39,7 +39,7 @@
 
     const isSecure = window.location.protocol === "https:";
     const protocol = isSecure ? "wss://" : "ws://";
-    const signalingUrl = protocol + window.location.host;
+    const signalingUrl = protocol + window.location.host + "/playerws";
     const ws = new WebSocket(signalingUrl);
     let pc;
 
