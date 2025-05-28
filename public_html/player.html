@@ -5,28 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pixel Streaming Player</title>
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      font-family: Arial, sans-serif;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    video {
-      width: 100%;
-      max-height: 100vh;
-      background: black;
-    }
-    #status {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 1.5em;
-    }
+    body { margin: 0; background: #000; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    video { width: 100%; max-height: 100vh; background: black; }
+    #status { position: absolute; top: 20px; width: 100%; text-align: center; font-size: 1.5em; }
   </style>
 </head>
 <body>
@@ -36,82 +17,34 @@
   <script>
     const status = document.getElementById('status');
     const video = document.getElementById('player');
-
-    const isSecure = window.location.protocol === "https:";
-    const protocol = isSecure ? "wss://" : "ws://";
-    const signalingUrl = protocol + window.location.host + "/playerws";
-    const ws = new WebSocket(signalingUrl);
+    const ws = new WebSocket(`ws://${location.hostname}:10000`);
     let pc;
 
     function log(msg) {
-      console.log(msg);
       status.innerText = msg;
+      console.log(msg);
     }
 
-    ws.onopen = () => {
-      log("WebSocket connected");
-    };
-
-    ws.onerror = (err) => {
-      console.error("WebSocket error:", err);
-      log("WebSocket error");
-    };
-
-    ws.onclose = () => {
-      log("WebSocket closed");
-    };
+    ws.onopen = () => log("WebSocket connected");
+    ws.onerror = () => log("WebSocket error");
+    ws.onclose = () => log("WebSocket closed");
 
     ws.onmessage = async (event) => {
-      let msg;
-      try {
-        msg = JSON.parse(event.data);
-      } catch (e) {
-        console.error("Invalid message:", event.data);
-        return;
-      }
-
-      if (msg.type === 'config') {
-        log("Received config");
-        startPeerConnection(msg.peerConnectionOptions);
-      } else if (msg.type === 'answer') {
-        log("Received answer");
-        await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
-      } else if (msg.type === 'iceCandidate') {
-        log("Received ICE candidate");
-        pc.addIceCandidate(msg.candidate).catch(console.error);
-      } else {
-        console.warn("Unknown message type:", msg.type);
-      }
+      const msg = JSON.parse(event.data);
+      if (msg.type === 'config') startPeerConnection(msg.peerConnectionOptions);
+      else if (msg.type === 'answer') await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
+      else if (msg.type === 'iceCandidate') await pc.addIceCandidate(msg.candidate);
     };
 
     function startPeerConnection(config) {
-      log("Starting PeerConnection");
-      const rtcConfig = config || {
-        iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
-      };
-
-      pc = new RTCPeerConnection(rtcConfig);
-
-      pc.onicecandidate = event => {
-        if (event.candidate) {
-          log("Sending ICE candidate");
-          ws.send(JSON.stringify({ type: "iceCandidate", candidate: event.candidate }));
-        }
-      };
-
-      pc.ontrack = event => {
-        log("Received track");
-        if (event.track.kind === "video") {
-          video.srcObject = event.streams[0];
-        }
-      };
-
+      pc = new RTCPeerConnection(config || { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+      pc.onicecandidate = e => e.candidate && ws.send(JSON.stringify({ type: 'iceCandidate', candidate: e.candidate }));
+      pc.ontrack = e => video.srcObject = e.streams[0];
       pc.addTransceiver("video", { direction: "recvonly" });
 
       pc.createOffer().then(offer => {
         pc.setLocalDescription(offer);
-        ws.send(JSON.stringify({ type: "offer", sdp: offer.sdp }));
-        log("Sent offer");
+        ws.send(JSON.stringify({ type: 'offer', sdp: offer.sdp }));
       });
     }
   </script>
