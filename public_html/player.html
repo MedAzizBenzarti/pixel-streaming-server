@@ -36,9 +36,10 @@
   <script>
     const status = document.getElementById('status');
     const video = document.getElementById('player');
+
     const protocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const port = window.location.protocol === "https:" ? 443 : 10000;
-    const wsUrl = `${protocol}://${location.hostname}:${port}`;
+    const wsUrl = `${protocol}://${location.host}`;
+
     let ws, pc;
 
     function log(msg) {
@@ -50,9 +51,7 @@
       log("Connecting...");
       ws = new WebSocket(wsUrl);
 
-      ws.onopen = () => {
-        log("WebSocket connected");
-      };
+      ws.onopen = () => log("WebSocket connected");
 
       ws.onerror = (err) => {
         log("WebSocket error");
