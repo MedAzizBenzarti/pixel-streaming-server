@@ -162,15 +162,7 @@ if (config.UseHTTPS) {
 
 	//Setup http -> https redirect
 	console.log('Redirecting http->https');
-	app.use((req, res, next) => {
-		if (
-		  !req.secure &&
-		  req.headers.upgrade !== 'websocket' // ignore WebSocket upgrade requests
-		) {
-		  return res.redirect(`https://${req.headers.host}${req.url}`);
-		}
-		next();
-	  });
+	
 	  
 }
 
