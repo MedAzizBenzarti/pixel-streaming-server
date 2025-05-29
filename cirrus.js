@@ -17,7 +17,7 @@ logging.RegisterConsoleLogger();
 const defaultConfig = {
 	UseFrontend: false,
 	UseMatchmaker: false,
-	UseHTTPS: true,
+	UseHTTPS: false,
 	HTTPSCertFile: './certificates/client-cert.pem',
 	HTTPSKeyFile: './certificates/client-key.pem',
 	LogToFile: true,
