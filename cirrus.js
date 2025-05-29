@@ -30,7 +30,7 @@ const defaultConfig = {
 	PublicIp: "0.0.0.0",
 	HttpPort: 10000,
 	HttpsPort: 443,
-	StreamerPort: 8888,
+	StreamerPort: 443,
 	SFUPort: 8889,
 	MaxPlayerCount: -1,
 	DisableSSLCert: true
@@ -610,7 +610,8 @@ streamerMessageHandlers.set('disconnectPlayer', onStreamerMessageDisconnectPlaye
 streamerMessageHandlers.set('layerPreference', onStreamerMessageLayerPreference);
 
 console.logColor(logging.Green, `WebSocket listening for Streamer connections on :${streamerPort}`)
-let streamerServer;
+//let streamerServer;
+let streamerServer = new WebSocket.Server({ server: https });
 
 if (config.UseHTTPS) {
   streamerServer = new WebSocket.Server({ server: https });
