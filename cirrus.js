@@ -17,7 +17,7 @@ logging.RegisterConsoleLogger();
 const defaultConfig = {
 	UseFrontend: false,
 	UseMatchmaker: false,
-	UseHTTPS: false,
+	UseHTTPS: true,
 	HTTPSCertFile: './certificates/client-cert.pem',
 	HTTPSKeyFile: './certificates/client-key.pem',
 	LogToFile: true,
@@ -30,7 +30,7 @@ const defaultConfig = {
 	PublicIp: "0.0.0.0",
 	HttpPort: 10000,
 	HttpsPort: 443,
-	StreamerPort: 8888,
+	StreamerPort: 443,
 	SFUPort: 8889,
 	MaxPlayerCount: -1,
 	DisableSSLCert: true
@@ -162,22 +162,16 @@ if (config.UseHTTPS) {
 
 	//Setup http -> https redirect
 	console.log('Redirecting http->https');
-	app.use(function (req, res, next) {
-		if (!req.secure) {
-			if (req.get('Host')) {
-				var hostAddressParts = req.get('Host').split(':');
-				var hostAddress = hostAddressParts[0];
-				if (httpsPort != 443) {
-					hostAddress = `${hostAddress}:${httpsPort}`;
-				}
-				return res.redirect(['https://', hostAddress, req.originalUrl].join(''));
-			} else {
-				console.error(`unable to get host name from header. Requestor ${req.ip}, url path: '${req.originalUrl}', available headers ${JSON.stringify(req.headers)}`);
-				return res.status(400).send('Bad Request');
-			}
+	app.use((req, res, next) => {
+		if (
+		  !req.secure &&
+		  req.headers.upgrade !== 'websocket' // ignore WebSocket upgrade requests
+		) {
+		  return res.redirect(`https://${req.headers.host}${req.url}`);
 		}
 		next();
-	});
+	  });
+	  
 }
 
 sendGameSessionData();
