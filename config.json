@@ -7,7 +7,7 @@
     "LogToFile": true,
     "LogVerbose": true,
     "HomepageFile": "public_html/player.html",
-    "AdditionalRoutes": {},
+    "AdditionalRoutes": {"/": "public_html"},
     "EnableWebserver": true,
     "MatchmakerAddress": "",
     "MatchmakerPort": 9999,
@@ -17,5 +17,6 @@
     "StreamerPort": 443,
     "SFUPort": 8889,
     "MaxPlayerCount": -1,
-    "DisableSSLCert": true
-}
+    "DisableSSLCert": true,
+    "peerConnectionOptions": "{\"iceServers\":[{\"urls\":[\"stun:stun.l.google.com:19302\"]},{\"urls\":[\"turn:openrelay.metered.ca:80\",\"turn:openrelay.metered.ca:443\"],\"username\":\"openrelayproject\",\"credential\":\"openrelaypass\"}]}"
+  }
