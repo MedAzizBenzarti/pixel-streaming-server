@@ -9,7 +9,7 @@
     "HomepageFile": "public_html/player.html",
     "AdditionalRoutes": {},
     "EnableWebserver": true,
-    "MatchmakerAddress": "",
+    "MatchmakerAddress": "0.0.0.0",
     "MatchmakerPort": 9999,
     "PublicIp": "0.0.0.0",
     "HttpPort": 10000,
