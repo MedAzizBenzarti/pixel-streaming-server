@@ -54,16 +54,26 @@ wss.on('connection', (ws) => {
     }
 
     // Identify if this client is a streamer
-    if (message.type === 'identify') {
-      ws.isStreamer = true;
-      streamer = ws;
-      console.log('[Server] Streamer registered');
-      // Send config to all existing players
-      players.forEach((player) => {
-        player.send(JSON.stringify({ type: 'config', peerConnectionOptions: { iceServers: [] } }));
-      });
-      return;
-    }
+    if (msg.type === 'identify') {
+		console.log('Streamer identified');
+		streamer = ws;
+	  
+		// When the streamer sends messages, forward to all players
+		streamer.on('message', (data) => {
+		  for (const player of players) {
+			if (player.readyState === WebSocket.OPEN) {
+			  player.send(data);
+			}
+		  }
+		});
+	  
+		streamer.on('close', () => {
+		  console.log('Streamer disconnected');
+		  streamer = null;
+		});
+		return;
+	  }
+	  
 
     // Forward from player to streamer
     if (!ws.isStreamer && streamer) {
