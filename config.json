@@ -1,7 +1,7 @@
 {
     "UseHTTPS": true,
-    "HTTPSCertFile": "/certificates/client-key.pem",
-    "HTTPSKeyFile": "/certificates/client-cert.pem",
+    "HTTPSCertFile": "/certificates/client-cert.pem",
+    "HTTPSKeyFile": "/certificates/client-key.pem",
     "HttpPort": 10000,
     "HttpsPort": 443,
     "EnableWebserver": true,
