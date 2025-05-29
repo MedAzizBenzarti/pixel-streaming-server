@@ -54,7 +54,7 @@ wss.on('connection', (ws) => {
     }
 
     // Identify if this client is a streamer
-    if (message.type === 'identify' && message.role === 'streamer') {
+    if (message.type === 'identify') {
       ws.isStreamer = true;
       streamer = ws;
       console.log('[Server] Streamer registered');
