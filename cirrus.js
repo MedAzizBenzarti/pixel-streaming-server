@@ -610,9 +610,7 @@ streamerMessageHandlers.set('disconnectPlayer', onStreamerMessageDisconnectPlaye
 streamerMessageHandlers.set('layerPreference', onStreamerMessageLayerPreference);
 
 console.logColor(logging.Green, `WebSocket listening for Streamer connections on :${streamerPort}`)
-//let streamerServer;
-let streamerServer = new WebSocket.Server({ server: https });
-
+let streamerServer;
 if (config.UseHTTPS) {
   streamerServer = new WebSocket.Server({ server: https });
 } else {
