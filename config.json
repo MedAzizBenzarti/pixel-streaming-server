@@ -1,7 +1,7 @@
 {
     "UseFrontend": false,
     "UseMatchmaker": false,
-    "UseHTTPS": false,
+    "UseHTTPS": true,
     "HTTPSCertFile": "./certificates/client-cert.pem",
     "HTTPSKeyFile": "./certificates/client-key.pem",
     "LogToFile": true,
