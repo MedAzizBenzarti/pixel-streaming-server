@@ -1,135 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Pixel Streaming</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: white;
-      font-family: sans-serif;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      background: black;
-    }
-    #status {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 1.5em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Streaming Player</title>
 </head>
 <body>
-  <div id="status">Connecting...</div>
-  <video id="player" autoplay playsinline muted></video>
+    <h1>Pixel Streaming Player</h1>
+    <video id="player-video" autoplay playsinline controls style="width: 100%;"></video>
 
-  <script>
-    const status = document.getElementById('status');
-    const video = document.getElementById('player');
-    const protocol = location.protocol === "https:" ? "wss" : "ws";
-    const wsUrl = `${protocol}://${location.host}`;
-    let ws, pc;
+    <script>
+        const videoElement = document.getElementById('player-video');
+        const serverAddress = "wss://pixel-streaming-server-1.onrender.com:443";
+        const webSocket = new WebSocket(serverAddress);
 
-    function log(msg) {
-      console.log(msg);
-      status.innerText = msg;
-    }
+        webSocket.onopen = () => {
+            console.log("Connected to the Signaling Server");
+        };
 
-    function connectWebSocket() {
-      log("Connecting WebSocket...");
-      ws = new WebSocket(wsUrl);
+        webSocket.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+            console.log("Received message from server:", message);
 
-      ws.onopen = () => {
-        log("WebSocket connected");
-      };
+            // Handle different types of messages
+            switch (message.type) {
+                case "config":
+                    console.log("Config received:", message);
+                    break;
+                case "identify":
+                    console.log("Identify message received:", message);
+                    break;
+                default:
+                    console.warn("Unhandled message type:", message.type);
+                    break;
+            }
+        };
 
-      ws.onerror = (err) => {
-        log("WebSocket error");
-        console.error(err);
-      };
+        webSocket.onerror = (error) => {
+            console.error("WebSocket error:", error);
+        };
 
-      ws.onclose = () => {
-        log("WebSocket closed. Reconnecting in 3s...");
-        setTimeout(connectWebSocket, 3000);
-      };
-
-      ws.onmessage = async (event) => {
-        let msg;
-        try {
-          msg = JSON.parse(event.data);
-        } catch (e) {
-          console.error("Invalid message:", event.data);
-          return;
-        }
-
-        if (msg.type === 'config') {
-          startPeerConnection(msg.peerConnectionOptions);
-        } else if (msg.type === 'answer') {
-          await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
-          log("Received answer");
-        } else if (msg.type === 'iceCandidate') {
-          try {
-            await pc.addIceCandidate(msg.candidate);
-            log("ICE candidate added");
-          } catch (e) {
-            console.error("Error adding ICE candidate", e);
-          }
-        }
-      };
-    }
-
-    function startPeerConnection(config) {
-      log("Starting WebRTC connection");
-
-      const rtcConfig = config || {
-        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
-      };
-
-      pc = new RTCPeerConnection(rtcConfig);
-
-      pc.onicecandidate = (event) => {
-        if (event.candidate) {
-          ws.send(JSON.stringify({ type: 'iceCandidate', candidate: event.candidate }));
-        }
-      };
-
-      pc.ontrack = (event) => {
-        log("Received video track");
-        video.srcObject = event.streams[0];
-      };
-
-      pc.onconnectionstatechange = () => {
-        console.log("Connection state:", pc.connectionState);
-      };
-
-      pc.oniceconnectionstatechange = () => {
-        console.log("ICE state:", pc.iceConnectionState);
-      };
-
-      pc.addTransceiver("video", { direction: "recvonly" });
-
-      pc.createOffer().then((offer) => {
-        return pc.setLocalDescription(offer);
-      }).then(() => {
-        ws.send(JSON.stringify({ type: "offer", sdp: pc.localDescription.sdp }));
-        log("Sent offer");
-      }).catch((err) => {
-        console.error("Error creating offer", err);
-        log("Offer failed");
-      });
-    }
-
-    connectWebSocket();
-  </script>
+        webSocket.onclose = () => {
+            console.log("Disconnected from Signaling Server");
+        };
+    </script>
 </body>
 </html>

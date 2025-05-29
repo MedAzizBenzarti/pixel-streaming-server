@@ -1,11 +1,21 @@
 {
+    "UseFrontend": true,
+    "UseMatchmaker": false,
     "UseHTTPS": true,
-    "HTTPSCertFile": "/certificates/client-cert.pem",
-    "HTTPSKeyFile": "/certificates/client-key.pem",
+    "HTTPSCertFile": "./certificates/client-cert.pem",
+    "HTTPSKeyFile": "./certificates/client-key.pem",
+    "LogToFile": true,
+    "LogVerbose": true,
+    "HomepageFile": "player.html",
+    "AdditionalRoutes": {},
+    "EnableWebserver": true,
+    "MatchmakerAddress": "",
+    "MatchmakerPort": 9999,
+    "PublicIp": "0.0.0.0",
     "HttpPort": 10000,
     "HttpsPort": 443,
-    "EnableWebserver": true,
-    "HomepageFile": "public_html/player.html",
-    "AdditionalRoutes": { "/": "public_html" }
-  }
-  
+    "StreamerPort": 8888,
+    "SFUPort": 8889,
+    "MaxPlayerCount": -1,
+    "DisableSSLCert": true
+}
