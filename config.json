@@ -14,7 +14,7 @@
     "PublicIp": "0.0.0.0",
     "HttpPort": 10000,
     "HttpsPort": 443,
-    "StreamerPort": 443,
+    "StreamerPort": 8888,
     "SFUPort": 8889,
     "MaxPlayerCount": -1,
     "DisableSSLCert": true
