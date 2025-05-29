@@ -1,26 +1,30 @@
+// cirrus.js - Signaling server for Unreal Pixel Streaming
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-const http = require('http');
-const https = require('https');
-const WebSocket = require('ws');
 const yargs = require('yargs');
+const WebSocket = require('ws');
 
 const argv = yargs.argv;
 const configPath = argv.configFile || './config.json';
 const config = JSON.parse(fs.readFileSync(configPath));
 
 const app = express();
-const players = new Set();
-let streamer = null;
 
 // Serve static files
 if (config.EnableWebserver) {
   for (const route in config.AdditionalRoutes) {
-    app.use(route, express.static(path.join(__dirname, config.AdditionalRoutes[route])));
+    const staticPath = path.join(__dirname, config.AdditionalRoutes[route]);
+    app.use(route, express.static(staticPath));
   }
+
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, config.HomepageFile));
+    const homepagePath = path.join(__dirname, config.HomepageFile);
+    if (fs.existsSync(homepagePath)) {
+      res.sendFile(homepagePath);
+    } else {
+      res.status(404).send('Homepage not found');
+    }
   });
 }
 
@@ -28,91 +32,70 @@ if (config.EnableWebserver) {
 let server;
 if (config.UseHTTPS) {
   const options = {
-    cert: fs.readFileSync(config.HTTPSCertFile),
     key: fs.readFileSync(config.HTTPSKeyFile),
+    cert: fs.readFileSync(config.HTTPSCertFile),
   };
-  server = https.createServer(options, app);
+  server = require('https').createServer(options, app);
 } else {
-  server = http.createServer(app);
+  server = require('http').createServer(app);
 }
 
-// Create WebSocket server
+// WebSocket Server
 const wss = new WebSocket.Server({ server });
 
+let streamer = null;
+const players = new Set();
+
 wss.on('connection', (ws) => {
-  console.log('[Server] WebSocket client connected');
+  console.log('WebSocket client connected');
 
-  ws.isStreamer = false;
-
-  ws.on('message', (msg) => {
-    let message;
+  ws.on('message', (message) => {
+    let msg;
     try {
-      message = JSON.parse(msg);
-    } catch (err) {
-      console.error('[Server] Invalid JSON:', msg);
+      msg = JSON.parse(message);
+    } catch (e) {
+      console.error('Invalid JSON:', message);
       return;
     }
 
-    // Identify if this client is a streamer
     if (msg.type === 'identify') {
-		console.log('Streamer identified');
-		streamer = ws;
-	  
-		// When the streamer sends messages, forward to all players
-		streamer.on('message', (data) => {
-		  for (const player of players) {
-			if (player.readyState === WebSocket.OPEN) {
-			  player.send(data);
-			}
-		  }
-		});
-	  
-		streamer.on('close', () => {
-		  console.log('Streamer disconnected');
-		  streamer = null;
-		});
-		return;
-	  }
-	  
+      console.log('Streamer identified');
+      streamer = ws;
 
-    // Forward from player to streamer
-    if (!ws.isStreamer && streamer) {
-      streamer.send(msg);
-    }
-
-    // Forward from streamer to all players
-    if (ws.isStreamer) {
-      players.forEach((player) => {
-        if (player.readyState === WebSocket.OPEN) {
-          player.send(msg);
+      streamer.on('message', (data) => {
+        for (const player of players) {
+          if (player.readyState === WebSocket.OPEN) {
+            player.send(data);
+          }
         }
       });
+
+      streamer.on('close', () => {
+        console.log('Streamer disconnected');
+        streamer = null;
+      });
+
+      return;
+    }
+
+    // Viewer
+    if (!players.has(ws)) {
+      players.add(ws);
+      console.log(`Viewer connected (${players.size} total)`);
+
+      ws.on('close', () => {
+        players.delete(ws);
+        console.log(`Viewer disconnected (${players.size} remaining)`);
+      });
+    }
+
+    if (streamer && streamer.readyState === WebSocket.OPEN) {
+      streamer.send(message);
     }
   });
-
-  ws.on('close', () => {
-    if (ws.isStreamer) {
-      console.log('[Server] Streamer disconnected');
-      streamer = null;
-    } else {
-      players.delete(ws);
-      console.log('[Server] Player disconnected');
-    }
-  });
-
-  // By default treat all clients as players
-  if (!ws.isStreamer) {
-    players.add(ws);
-    console.log('[Server] Player connected');
-
-    // Send initial config if streamer is already connected
-    if (streamer) {
-      ws.send(JSON.stringify({ type: 'config', peerConnectionOptions: { iceServers: [] } }));
-    }
-  }
 });
 
-// Start the server
+// Start server
 server.listen(config.HttpsPort || config.HttpPort, () => {
   console.log(`🚀 Server running on port ${config.HttpsPort || config.HttpPort}`);
 });

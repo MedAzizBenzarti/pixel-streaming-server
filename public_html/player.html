@@ -1,70 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>Pixel Streaming</title>
   <style>
-    body { margin: 0; background: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
-    #status { position: absolute; top: 20px; width: 100%; text-align: center; font-size: 1.5em; }
-    video { width: 100%; max-height: 100vh; background: black; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+    #status {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+    }
   </style>
 </head>
 <body>
   <div id="status">Connecting...</div>
-  <video id="player" autoplay playsinline></video>
+  <video id="player" autoplay playsinline muted></video>
+
   <script>
     const status = document.getElementById('status');
     const video = document.getElementById('player');
-    const protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-    const wsUrl = `${protocol}://${location.hostname}`;
+    const protocol = location.protocol === "https:" ? "wss" : "ws";
+    const wsUrl = `${protocol}://${location.host}`;
     let ws, pc;
 
     function log(msg) {
-      status.textContent = msg;
       console.log(msg);
+      status.innerText = msg;
     }
 
     function connectWebSocket() {
+      log("Connecting WebSocket...");
       ws = new WebSocket(wsUrl);
-      ws.onopen = () => log('WebSocket connected');
-      ws.onclose = () => log('WebSocket closed');
-      ws.onerror = err => log('WebSocket error');
 
-      ws.onmessage = async ({ data }) => {
+      ws.onopen = () => {
+        log("WebSocket connected");
+      };
+
+      ws.onerror = (err) => {
+        log("WebSocket error");
+        console.error(err);
+      };
+
+      ws.onclose = () => {
+        log("WebSocket closed. Reconnecting in 3s...");
+        setTimeout(connectWebSocket, 3000);
+      };
+
+      ws.onmessage = async (event) => {
         let msg;
-        try { msg = JSON.parse(data); } catch (e) { return; }
+        try {
+          msg = JSON.parse(event.data);
+        } catch (e) {
+          console.error("Invalid message:", event.data);
+          return;
+        }
 
-        if (msg.type === 'config') startPeer(msg.peerConnectionOptions);
-        else if (msg.type === 'answer') await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
-        else if (msg.type === 'iceCandidate') await pc.addIceCandidate(msg.candidate).catch(console.error);
+        if (msg.type === 'config') {
+          startPeerConnection(msg.peerConnectionOptions);
+        } else if (msg.type === 'answer') {
+          await pc.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
+          log("Received answer");
+        } else if (msg.type === 'iceCandidate') {
+          try {
+            await pc.addIceCandidate(msg.candidate);
+            log("ICE candidate added");
+          } catch (e) {
+            console.error("Error adding ICE candidate", e);
+          }
+        }
       };
     }
 
-    function startPeer(config) {
-      log('Starting PeerConnection');
-      pc = new RTCPeerConnection(config || {
-        iceServers: [
-          { urls: 'stun:stun.l.google.com:19302' },
-          { urls: ['turn:openrelay.metered.ca:80','turn:openrelay.metered.ca:443'], username: 'openrelayproject', credential: 'openrelaypass' }
-        ]
-      });
+    function startPeerConnection(config) {
+      log("Starting WebRTC connection");
 
-      pc.onicecandidate = ({ candidate }) => {
-        if (candidate) ws.send(JSON.stringify({ type: 'iceCandidate', candidate }));
+      const rtcConfig = config || {
+        iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
       };
 
-      pc.ontrack = ({ streams }) => { video.srcObject = streams[0]; log('Stream received'); };
+      pc = new RTCPeerConnection(rtcConfig);
 
-      pc.addTransceiver("video", {
-        direction: "recvonly",
-        sendEncodings: [{ rid: "h", maxBitrate: 300000 }],
-      });
+      pc.onicecandidate = (event) => {
+        if (event.candidate) {
+          ws.send(JSON.stringify({ type: 'iceCandidate', candidate: event.candidate }));
+        }
+      };
 
-      pc.createOffer().then(offer => {
-        pc.setLocalDescription(offer);
-        ws.send(JSON.stringify({ type: 'offer', sdp: offer.sdp }));
-        log('Offer sent');
+      pc.ontrack = (event) => {
+        log("Received video track");
+        video.srcObject = event.streams[0];
+      };
+
+      pc.onconnectionstatechange = () => {
+        console.log("Connection state:", pc.connectionState);
+      };
+
+      pc.oniceconnectionstatechange = () => {
+        console.log("ICE state:", pc.iceConnectionState);
+      };
+
+      pc.addTransceiver("video", { direction: "recvonly" });
+
+      pc.createOffer().then((offer) => {
+        return pc.setLocalDescription(offer);
+      }).then(() => {
+        ws.send(JSON.stringify({ type: "offer", sdp: pc.localDescription.sdp }));
+        log("Sent offer");
+      }).catch((err) => {
+        console.error("Error creating offer", err);
+        log("Offer failed");
       });
     }
 
