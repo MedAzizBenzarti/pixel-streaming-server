@@ -624,7 +624,7 @@ streamerMessageHandlers.set('disconnectPlayer', onStreamerMessageDisconnectPlaye
 streamerMessageHandlers.set('layerPreference', onStreamerMessageLayerPreference);
 
 console.logColor(logging.Green, `WebSocket listening for Streamer connections on :${streamerPort}`)
-let streamerServer = new WebSocket.Server({ port: streamerPort, backlog: 1 });
+let streamerServer = new WebSocket.Server({ server: https });
 streamerServer.on('connection', function (ws, req) {
 	console.logColor(logging.Green, `Streamer connected: ${req.connection.remoteAddress}`);
 	sendStreamerConnectedToMatchmaker();
