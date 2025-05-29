@@ -1,5 +1,5 @@
 {
-    "UseFrontend": true,
+    "UseFrontend": false,
     "UseMatchmaker": false,
     "UseHTTPS": false,
     "HTTPSCertFile": "./certificates/client-cert.pem",
