@@ -6,7 +6,7 @@
     "HTTPSKeyFile": "./certificates/client-key.pem",
     "LogToFile": true,
     "LogVerbose": true,
-    "HomepageFile": "player.html",
+    "HomepageFile": "public_html/player.html",
     "AdditionalRoutes": {},
     "EnableWebserver": true,
     "MatchmakerAddress": "",
