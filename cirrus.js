@@ -59,20 +59,16 @@ wss.on('connection', (ws, req) => {
   ws.on('close', () => console.log(`WebSocket #${id} disconnected`));
 });
 
-// Handle WebSocket upgrades ONLY if the upgrade headers exist
 server.on('upgrade', (req, socket, head) => {
-  const upgradeHeader = req.headers['upgrade'];
-
-  if (upgradeHeader && upgradeHeader.toLowerCase() === 'websocket') {
-    wss.handleUpgrade(req, socket, head, (ws) => {
-      wss.emit('connection', ws, req);
-    });
-  } else {
-    // If it's a regular HTTP request, respond with 426 manually (or close)
-    socket.write('HTTP/1.1 426 Upgrade Required\r\n\r\n');
-    socket.destroy();
-  }
-});
+	if (req.headers['upgrade']?.toLowerCase() === 'websocket') {
+	  wss.handleUpgrade(req, socket, head, (ws) => {
+		wss.emit('connection', ws, req);
+	  });
+	} else {
+	  socket.destroy(); // don't try to serve HTTP here
+	}
+  });
+  
 
 // Start server
 const port = 443;
