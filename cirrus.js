@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(hsts({ maxAge: 15552000 }));
 app.use(RateLimit({ windowMs: 1 * 60 * 1000, max: 100 }));
 
-// Serve static content
+// Serve static files
 if (config.EnableWebserver) {
   for (const route in config.AdditionalRoutes) {
     const localPath = path.join(__dirname, config.AdditionalRoutes[route]);
@@ -44,37 +44,32 @@ if (config.EnableWebserver) {
 // Create HTTPS server
 const server = https.createServer({
   key: fs.readFileSync(config.HTTPSKeyFile),
-  cert: fs.readFileSync(config.HTTPSCertFile)
+  cert: fs.readFileSync(config.HTTPSCertFile),
 }, app);
 
-// Single WebSocket server (Pixel Streaming expects one endpoint)
+// WebSocket server
 const wss = new WebSocket.Server({ noServer: true });
+let nextClientId = 1;
 
-// WebSocket handlers
-let nextId = 1;
 wss.on('connection', (ws, req) => {
-  const id = nextId++;
-  console.log(`WebSocket client connected [#${id}] from ${req.socket.remoteAddress}`);
+  const id = nextClientId++;
+  console.log(`WebSocket client #${id} connected from ${req.socket.remoteAddress}`);
 
-  ws.on('message', (msg) => {
-    console.log(`WS [#${id}]: ${msg}`);
-  });
-
-  ws.on('close', () => {
-    console.log(`WebSocket client [#${id}] disconnected`);
-  });
+  ws.on('message', (msg) => console.log(`WS #${id}: ${msg}`));
+  ws.on('close', () => console.log(`WebSocket #${id} disconnected`));
 });
 
-// Handle WebSocket upgrades on root path only
+// Handle WebSocket upgrades ONLY if the upgrade headers exist
 server.on('upgrade', (req, socket, head) => {
-  const pathname = new URL(req.url, `https://${req.headers.host}`).pathname;
+  const upgradeHeader = req.headers['upgrade'];
 
-  // Pixel Streaming client (UE5) typically connects to `/`
-  if (pathname === '/') {
+  if (upgradeHeader && upgradeHeader.toLowerCase() === 'websocket') {
     wss.handleUpgrade(req, socket, head, (ws) => {
       wss.emit('connection', ws, req);
     });
   } else {
+    // If it's a regular HTTP request, respond with 426 manually (or close)
+    socket.write('HTTP/1.1 426 Upgrade Required\r\n\r\n');
     socket.destroy();
   }
 });
@@ -82,5 +77,5 @@ server.on('upgrade', (req, socket, head) => {
 // Start server
 const port = process.env.PORT || config.HttpsPort || 443;
 server.listen(port, () => {
-  console.log(`✅ HTTPS server running on port ${port}`);
+  console.log(`✅ HTTPS server is running on port ${port}`);
 });
