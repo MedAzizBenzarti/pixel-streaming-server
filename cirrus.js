@@ -13,7 +13,7 @@ const argv = yargs.argv;
 const configPath = argv.configFile || './config.json';
 const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
-// Express setup
+// Initialize Express
 const app = express();
 app.use(helmet());
 app.use(hsts({ maxAge: 15552000 }));
@@ -44,34 +44,34 @@ if (config.EnableWebserver) {
 // Create HTTPS server
 const server = https.createServer({
   key: fs.readFileSync(config.HTTPSKeyFile),
-  cert: fs.readFileSync(config.HTTPSCertFile),
+  cert: fs.readFileSync(config.HTTPSCertFile)
 }, app);
 
-// WebSocket server
+// WebSocket setup
 const wss = new WebSocket.Server({ noServer: true });
 let nextClientId = 1;
 
 wss.on('connection', (ws, req) => {
   const id = nextClientId++;
   console.log(`WebSocket client #${id} connected from ${req.socket.remoteAddress}`);
-
-  ws.on('message', (msg) => console.log(`WS #${id}: ${msg}`));
+  ws.on('message', msg => console.log(`WS #${id}: ${msg}`));
   ws.on('close', () => console.log(`WebSocket #${id} disconnected`));
 });
 
+// WebSocket Upgrade
 server.on('upgrade', (req, socket, head) => {
-	if (req.headers['upgrade']?.toLowerCase() === 'websocket') {
-	  wss.handleUpgrade(req, socket, head, (ws) => {
-		wss.emit('connection', ws, req);
-	  });
-	} else {
-	  socket.destroy(); // don't try to serve HTTP here
-	}
-  });
-  
+  if (req.headers['upgrade']?.toLowerCase() === 'websocket') {
+    wss.handleUpgrade(req, socket, head, ws => {
+      wss.emit('connection', ws, req);
+    });
+  } else {
+    // Let Express handle everything else normally
+    socket.destroy();
+  }
+});
 
 // Start server
-const port = 443;
+const port = config.HttpsPort || 443;
 server.listen(port, '0.0.0.0', () => {
   console.log(`✅ HTTPS server is running on port ${port}`);
 });
