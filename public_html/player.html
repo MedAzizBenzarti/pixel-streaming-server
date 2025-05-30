@@ -11,7 +11,7 @@
 
     <script>
         const videoElement = document.getElementById('player-video');
-        const serverAddress = "wss://pixel-streaming-server-1.onrender.com/player";
+        const serverAddress = "0.0.0.0";
         const webSocket = new WebSocket(serverAddress);
 
         webSocket.onopen = () => {
