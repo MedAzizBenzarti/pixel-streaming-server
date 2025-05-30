@@ -75,7 +75,7 @@ server.on('upgrade', (req, socket, head) => {
 });
 
 // Start server
-const port = process.env.PORT || 443;
+const port = 443;
 server.listen(port, '0.0.0.0', () => {
   console.log(`✅ HTTPS server is running on port ${port}`);
 });
