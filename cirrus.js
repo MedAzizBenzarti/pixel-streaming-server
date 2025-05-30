@@ -1,28 +1,25 @@
-const express = require('express');
-const http = require('http');
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const WebSocket = require('ws');
+const express = require('express');
+const https = require('https');
 const helmet = require('helmet');
 const hsts = require('hsts');
+const WebSocket = require('ws');
 const RateLimit = require('express-rate-limit');
-const { parse } = require('url');
+const yargs = require('yargs');
 
-// Load config
-const configPath = process.argv.find(arg => arg.includes('--configFile='))?.split('=')[1] || './config.json';
+// Load configuration
+const argv = yargs.argv;
+const configPath = argv.configFile || './config.json';
 const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
 
+// Initialize Express app
 const app = express();
-
-// Security middleware
 app.use(helmet());
 app.use(hsts({ maxAge: 15552000 }));
-
-// Rate limiting
 app.use(RateLimit({ windowMs: 1 * 60 * 1000, max: 100 }));
 
-// Serve static files
+// Serve static files if enabled
 if (config.EnableWebserver) {
   for (const route in config.AdditionalRoutes) {
     const localPath = path.join(__dirname, config.AdditionalRoutes[route]);
@@ -34,7 +31,6 @@ if (config.EnableWebserver) {
   app.use('/scripts', express.static(path.join(__dirname, '/scripts')));
   app.use('/', express.static(path.join(__dirname, '/custom_html')));
 
-  // Serve player.html or homepage file
   app.get('/', (req, res) => {
     const homepagePath = path.join(__dirname, config.HomepageFile);
     if (fs.existsSync(homepagePath)) {
@@ -45,45 +41,29 @@ if (config.EnableWebserver) {
   });
 }
 
-// Create HTTPS or HTTP server
-const server = config.UseHTTPS
-  ? https.createServer({
-      key: fs.readFileSync(config.HTTPSKeyFile),
-      cert: fs.readFileSync(config.HTTPSCertFile),
-    }, app)
-  : http.createServer(app);
+// Create HTTPS server
+const server = https.createServer(
+  {
+    key: fs.readFileSync(config.HTTPSKeyFile),
+    cert: fs.readFileSync(config.HTTPSCertFile),
+  },
+  app
+);
 
-// WebSocket servers
+// Initialize WebSocket servers
 const streamerWSS = new WebSocket.Server({ noServer: true });
 const playerWSS = new WebSocket.Server({ noServer: true });
-const sfuWSS = new WebSocket.Server({ port: config.SFUPort });
+const sfuWSS = new WebSocket.Server({ noServer: true });
 
-// Handle WebSocket upgrade requests
-server.on('upgrade', (req, socket, head) => {
-  const { pathname } = parse(req.url);
+// Handle WebSocket connections
+let nextPlayerId = 1;
 
-  if (pathname === '/stream') {
-    streamerWSS.handleUpgrade(req, socket, head, (ws) => {
-      streamerWSS.emit('connection', ws, req);
-    });
-  } else if (pathname === '/player') {
-    playerWSS.handleUpgrade(req, socket, head, (ws) => {
-      playerWSS.emit('connection', ws, req);
-    });
-  } else {
-    socket.write('HTTP/1.1 426 Upgrade Required\r\n\r\n');
-    socket.destroy();
-  }
-});
-
-// WebSocket logic
 streamerWSS.on('connection', (ws, req) => {
   console.log(`Streamer connected from ${req.socket.remoteAddress}`);
   ws.on('message', (msg) => console.log(`Streamer: ${msg}`));
   ws.on('close', () => console.log('Streamer disconnected'));
 });
 
-let nextPlayerId = 1;
 playerWSS.on('connection', (ws, req) => {
   const playerId = nextPlayerId++;
   console.log(`Player ${playerId} connected from ${req.socket.remoteAddress}`);
@@ -97,8 +77,29 @@ sfuWSS.on('connection', (ws, req) => {
   ws.on('close', () => console.log('SFU disconnected'));
 });
 
-// Start main server
-const port = config.UseHTTPS ? config.HttpsPort : config.HttpPort;
+// Handle upgrade requests
+server.on('upgrade', (request, socket, head) => {
+  const { pathname } = new URL(request.url, `https://${request.headers.host}`);
+
+  if (pathname === '/stream') {
+    streamerWSS.handleUpgrade(request, socket, head, (ws) => {
+      streamerWSS.emit('connection', ws, request);
+    });
+  } else if (pathname === '/player') {
+    playerWSS.handleUpgrade(request, socket, head, (ws) => {
+      playerWSS.emit('connection', ws, request);
+    });
+  } else if (pathname === '/sfu') {
+    sfuWSS.handleUpgrade(request, socket, head, (ws) => {
+      sfuWSS.emit('connection', ws, request);
+    });
+  } else {
+    socket.destroy();
+  }
+});
+
+// Start server
+const port = process.env.PORT || config.HttpsPort || 443;
 server.listen(port, () => {
-  console.log(`${config.UseHTTPS ? 'HTTPS' : 'HTTP'} server listening on port ${port}`);
+  console.log(`HTTPS server listening on port ${port}`);
 });
